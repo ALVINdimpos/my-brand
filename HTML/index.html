@@ -1,12 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../CSS/Style.css" />
+  <title>My brand</title>
 </head>
+
 <body>
-    
+  <!--===== HEADER =====-->
+  <nav class="navbar">
+    <div class="logo">ALVIN<span>FISTON</span></div>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </label>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="#home" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#services" class="nav-link">Services</a>
+      </li>
+      <li class="nav-item">
+        <a href="#about" class="nav-link">About</a>
+      </li>
+      <li class="nav-item">
+        <a href="#contact" class="nav-link">Contact</a>
+      </li>
+    </ul>
+    <div class="nav-right">
+      <button>Download CV</button>
+    </div>
+  </nav>
+
+  <!--===== HEADER =====-->
+  <section id="ShowCase">
+    <div class="hero">
+      <div class="hero__container">
+        <h1 class="hero__title">
+          Hi, I'am <br> Alvin<span class="hero__title--color">&nbsp;FISTON</span>
+          <p class="hero__description">
+            Full Stack Developer based in Rwanda, Kigali
+            I’am coding with a clean and beautiful problem
+            solving in mind.
+          </p>
+          <button type="button">Contact Me</button>
+          <div class="social_media">
+            <a href="https://www.twitter.com/alvinfiston" target="_blank" class="social_media--link">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <p>Twitter</p>
+            </a>
+            <a href="https://instagram.com/iamalvin250" target="_blank" class="social_media--link">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+              <p>instagram</p>
+            </a>
+            <a href="https://www.linkedin.com/in/alvinfiston/" target="_blank" class="social_media--link">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+              <p>Linkedin</p>
+            </a>
+            <a href="https://www.linkedin.com/in/ALVINdimpos/" target="_blank" class="social_media--link">
+              <i class="fa fa-github" aria-hidden="true"></i>
+              <p>Github</p>
+            </a>
+          </div>
+      </div>
+      <div class="my-photo">
+        <img src="../Images/mine.png" alt="My Photo" />
+      </div>
+    </div>
+  </section>
+  <section id="Services">
+    <h1 class="title"> My <span>Awesome</span> Services</h1>
+    <div class="skills-wraper">
+      <div class="card">
+        <div>
+          <span class="icons">
+            <i class="fa fa-desktop"></i>
+          </span>
+        </div>
+        <div>
+          <p><span>M</span>inimal</p>
+          <p><span>V</span>iable</p>
+          <p><span>D</span>igital</p>
+        </div>
+      </div>
+      <div>
+        <h2>1. Create UI/UX Design for your &nbsp;<span>startup</span>
+          <br> fast & awesome
+        </h2>
+      </div>
+    </div>
+
+    <div class="skills-wraper1">
+      <div>
+        <h2>2. Create Beautifull &nbsp;<span>Ecommerce</span>
+          Website
+          <br>+ Point Of Sale
+        </h2>
+      </div>
+      <div class="card">
+        <div>
+          <p>
+            <span class="icons">
+              <i class="fa fa-cart-arrow-down"></i>
+            </span>
+          </p>
+
+        </div>
+        <div>
+          <p>
+            Ecommerce
+            Website
+            <span>+ Point Of Sale</span>
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section id="Skills">
+    <h1> My <span>skills</span> </h1>
+    <div class="skills_wraper">
+      <div>
+        <img src="../Images//Frame.png" alt="">
+      </div>
+      <div>
+        <h1 class="title">My Best <span>skills</span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit nullam placerat est quis lorem tristique aliquet cras
+            quis tristique felis vitae eleifend sapien.</p>
+        </h1>
+        <div class="skills">
+          <p>Ui-Ux Design <br>
+            90 %</p>
+          <p>Ui-Ux Design <br>
+            90 %</p>
+          <p>Ui-Ux Design <br>
+            90 %</p>
+          <p>Ui-Ux Design <br>
+            90 %</p>
+        </div>
+        <button type="button">Download CV</button>
+      </div>
+    </div>
+  </section>
+  <section id="work">
+    <h1 class="title"> My <span>Latest Project</span> Work</h1>
+    <div class="card-wraper">
+      <div class="cardp">
+        <img src="../Images/project1.jpg" alt="">
+      </div>
+      <div class="cardp">
+        <img src="../Images/project1.jpg" alt="">
+      </div>
+      <div class="cardp">
+        <img src="../Images/project1.jpg" alt="">
+      </div>
+    </div>
+  </section>
+  <section id="test">
+    <h1 class="title"> My Brand & Client <span>Testimonial</span> </h1>
+    <section class="tesmonilas">
+      <div class="bland">
+        <img src="../Images/image 12.png" alt="">
+        <img src="../Images/image 12.png" alt="">
+        <img src="../Images/image 12.png" alt="">
+        <img src="../Images/image 12.png" alt="">
+        <img src="../Images/image 12.png" alt="">
+        <img src="../Images/image 12.png" alt="">
+      </div>
+      <div class="test_card">
+        <p>“ hard worker, results exceed expectations,
+          just the best ”</p>
+        <div class="circle">
+          <img src="../Images/mine.png" alt="">
+        </div>
+      </div>
+      <div class="test_card">
+        <p>“ hard worker, results exceed expectations,
+          just the best ”</p>
+        <div class="circle">
+          <img src="../Images/mine.png" alt="">
+        </div>
+      </div>
+      <div class="test_card">
+        <p>“ hard worker, results exceed expectations,
+          just the best ”</p>
+        <div class="circle">
+          <img src="../Images/mine.png" alt="">
+        </div>
+      </div>
+    </section>
+  </section>
+  <section id="Contact">
+    <h1 class="title"> Contact <span>Me</span> </h1>
+    <div class="discus">
+      <h1>
+        <span>Let’s</span> Discuss Your Project
+      </h1>
+      <p>Let’s discuss your project or idea and find out how we can help your <br> &nbsp; &nbsp;&nbsp; &nbsp; business
+        grow. I’ll answer your email as
+        soon as
+        possible!</p>
+    </div>
+    <div class="contact">
+      <div class="contact_form">
+        <div class="contact_info1">
+          <div class="contact_info--item">
+            <div>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </div>
+            <div class="adrees">
+              <p>Address</p>
+              <p>KK 206 St, Kigali</p>
+            </div>
+          </div>
+          <div class="contact_info--item">
+            <div>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+            </div>
+            <div class="adrees">
+              <p>Phone</p>
+              <p>+1 234 567 890</p>
+            </div>
+
+          </div>
+          <div class="contact_info--item">
+            <div>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </div>
+            <div class="adrees">
+              <p>E-mail</p>
+              <p>fistonalvin@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <form action="">
+          <div class="iniputs">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+          </div>
+          <div class="iniputs">
+            <input type="text" placeholder="Subject">
+            <input type="text" placeholder="Budget">
+          </div>
+          <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+        </form>
+      </div>
+      <div class="center"> <button type="button">Send</button></div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    <div>
+      <p>© 2021 All Rights Reserved.</p>
+    </div>
+    <div>
+      <p>
+        Designed by <a href="">
+          ALVIN
+        </a>
+      </p>
+    </div>
+    <div>
+      <div class="social">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div>
+    </div>
+  </footer>
 </body>
+
 </html>
