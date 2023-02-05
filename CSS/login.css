@@ -18,15 +18,14 @@ span {
   left: 0;
 }
 .second_section {
-  background-color: #fafafa;
+  background-color: white;
   width: 50%;
   height: 100vh;
-  top: 0;
-  left: 0;
+  margin-top:-7px;
 }
 .first_section img {
-  height: 306.9573669433594px;
-  width: 307.0368957519531px;
+  height: 306px;
+  width: 307px;
 }
 .center {
   display: block;
@@ -44,8 +43,8 @@ span {
   width: 170.84px;
   height: 142.28px;
 }
-.container{
-    margin-top: 3rem;
+.container {
+  margin-top: 3rem;
 }
 .container .text {
   font-size: 35px;
@@ -89,8 +88,8 @@ form .data label {
 form .data input {
   height: 100%;
   width: 100%;
- outline: none;
-    padding-left: 10px;
+  outline: none;
+  padding-left: 10px;
   font-size: 17px;
   border: 1px solid silver;
 }
@@ -101,7 +100,7 @@ form .data input:focus {
 form .forgot-pass {
   display: flex;
   justify-content: center;
-    align-items: center;
+  align-items: center;
   width: 60%;
   margin: 0 auto;
   justify-content: space-between;
@@ -112,9 +111,9 @@ form .forgot-pass a {
   font-size: 24px;
 }
 form .forgot-pass p {
-    color: #18345E;
-    font-size: 24px;
-  }
+  color: #18345e;
+  font-size: 24px;
+}
 form .forgot-pass a:hover {
   text-decoration: underline;
 }
