@@ -86,7 +86,9 @@ span {
 .nav-link:hover {
   color: #47d8e1;
 }
-
+#menu-toggle{
+  display: none;
+}
 input[type="checkbox"]:checked ~ .nav-list {
   display: flex;
   flex-direction: column;
@@ -402,18 +404,19 @@ form textarea {
   );
   border-radius: 30px;
   padding: 12px;
-  cursor: pointer;
   overflow: hidden;
-}
-.blog_card--item:hover img {
-  transform: scale(1.1);
 }
 .blog_card--item img {
   width: 100%;
   height: 200px;
   border-radius: 20px;
   transition: 0.4s;
+  cursor: pointer;
 }
+.blog_card--item:hover img {
+  transform: scale(1.1);
+}
+
 .blog_card--item h1 {
   font-size: 20px;
   font-weight: bold;
@@ -549,7 +552,7 @@ footer a {
   }
   .tesmonilas {
     flex-direction: column;
-    gap: 3rem;
+    gap: 5rem;
     margin-bottom: 5rem;
   }
   .bland {
