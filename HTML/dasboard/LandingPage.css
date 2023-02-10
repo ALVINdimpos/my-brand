@@ -2,16 +2,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 body {
   min-height: 100vh;
 }
 a {
   text-decoration: none;
+  color: white;
+}
+a:hover{
+  color: black;
 }
 li {
   list-style: none;
+}
+.user i{
+  color: #47d8e1;
 }
 h1,
 h2 {
@@ -20,13 +27,13 @@ h2 {
 h3 {
   color: #999;
 }
-.brand-name{
+.brand-name {
   margin-bottom: 1rem;
 }
 .brand-name h1 {
   color: white;
 }
-.brand-name span{
+.brand-name span {
   color: #47d8e1;
 }
 .btn {
@@ -61,7 +68,8 @@ td {
 }
 .side-menu {
   position: fixed;
-  background: #032130;
+  background: #4f6e7d;
+  box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.1);
   width: 20vw;
   min-height: 100vh;
   display: flex;
@@ -106,7 +114,7 @@ td {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  z-index:500;
+  z-index: 500;
 }
 .container .header .nav {
   width: 90%;
@@ -118,7 +126,7 @@ td {
   display: flex;
   justify-content: center;
 }
-.container .header .nav .search input[type=text] {
+.container .header .nav .search input[type="text"] {
   border: none;
   background: #f1f1f1;
   padding: 10px;
@@ -170,7 +178,6 @@ td {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  
 }
 .container .content .cards .card {
   width: 250px;
@@ -189,14 +196,14 @@ td {
   border-radius: 30px;
   z-index: 1;
 }
-.container .content .cards .card i{
-font-size: 60px;
-color: #47d8e1;
+.container .content .cards .card i {
+  font-size: 60px;
+  color: #47d8e1;
 }
-.box h1{
+.box h1 {
   color: white;
 }
-.box h3{
+.box h3 {
   color: white;
 }
 .container .content .content-2 {
@@ -219,8 +226,9 @@ color: #47d8e1;
   display: flex;
   flex-direction: column;
 }
-.container .content .content-2 .recent-payments h2,th {
- color: white;
+.container .content .content-2 .recent-payments h2,
+th {
+  color: white;
 }
 
 .container .content .content-2 .new-students {
@@ -245,55 +253,53 @@ color: #47d8e1;
   );
 }
 .container .content .content-2 .new-students h2 {
-color: white;
-}
-.container .content .content-2 .new-students th,td{
   color: white;
-  }
-
+}
+.container .content .content-2 .new-students th,
+td {
+  color: white;
+}
 
 @media screen and (max-width: 1050px) {
   .side-menu li {
-      font-size: 18px;
+    font-size: 18px;
   }
-  .side-menu .brand-name span{
-      display: none;
+  .side-menu .brand-name span {
+    display: none;
   }
-  .container .header .nav .search  {
-      display: none;
+  .container .header .nav .search {
+    display: none;
   }
   .container .header .nav i {
-  color:#47d8e1 ;
+    color: #47d8e1;
   }
-
-
 }
 @media screen and (max-width: 940px) {
   .side-menu li span {
-      display: none;
+    display: none;
   }
   .side-menu {
-      align-items: center;
+    align-items: center;
   }
   .side-menu li img {
-      width: 40px;
-      height: 40px;
+    width: 40px;
+    height: 40px;
   }
   .side-menu li:hover {
-      background: #f05462;
-      padding: 8px 38px;
-      border: 2px solid white;
+    background: #f05462;
+    padding: 8px 38px;
+    border: 2px solid white;
   }
 }
-@media screen and (max-width:536px) {
+@media screen and (max-width: 536px) {
   .brand-name h1 {
-      font-size: 16px;
+    font-size: 16px;
   }
   .container .content .cards {
-      justify-content: center;
+    justify-content: center;
   }
   .container .content .content-2 .recent-payments table th:nth-child(2),
   .container .content .content-2 .recent-payments table td:nth-child(2) {
-      display: none;
+    display: none;
   }
 }

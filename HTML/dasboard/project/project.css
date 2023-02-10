@@ -9,6 +9,10 @@ body {
 }
 a {
   text-decoration: none;
+  color: white;
+}
+a:hover{
+  color: black;
 }
 li {
   list-style: none;
@@ -19,6 +23,9 @@ h2 {
 }
 h3 {
   color: #999;
+}
+.user i{
+  color: #47d8e1;
 }
 .brand-name {
   margin-bottom: 1rem;
