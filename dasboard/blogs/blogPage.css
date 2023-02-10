@@ -68,7 +68,8 @@ td {
 }
 .side-menu {
   position: fixed;
-  background: #032130;
+  background: #4f6e7d;
+  box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.1);
   width: 20vw;
   min-height: 100vh;
   display: flex;
