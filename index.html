@@ -25,13 +25,13 @@
         <a href="#home" class="nav-link">Home</a>
       </li>
       <li class="nav-item">
-        <a href="#services" class="nav-link">Services</a>
+        <a href="#Services" class="nav-link">Services</a>
       </li>
       <li class="nav-item">
-        <a href="#about" class="nav-link">About</a>
+        <a href="#Blogs" class="nav-link">Blog</a>
       </li>
       <li class="nav-item">
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#Contact" class="nav-link">Contact</a>
       </li>
     </ul>
     <div class="nav-right">
@@ -56,7 +56,7 @@
             I’am coding with a clean and beautiful problem
             solving in mind.
           </p>
-          <button type="button">Contact Me</button>
+          <button type="button" onclick="scrollToContactMe()">Contact Me</button>
           <div class="social_media">
             <a href="https://www.twitter.com/alvinfiston" target="_blank" class="social_media--link">
               <i class="fa fa-twitter" aria-hidden="true"></i>
@@ -153,7 +153,10 @@
           <p>Figma <br>
             90 %</p>
         </div>
-        <button type="button">Download CV</button>
+        <a href="./Images/myCv.pdf" download="myCv.pdf">
+          <button>Download CV</button>
+        </a>
+        
       </div>
     </div>
   </section>
@@ -205,7 +208,7 @@
       </div>
     </section>
   </section>
-  <section class="blogs">
+  <section class="blogs" id="Blogs">
     <h1 class="title"> My <span>Latest Blog</span> Post</h1>
     <div class="blog_card">
       <div class="blog_card--item">
@@ -247,7 +250,7 @@
         soon as
         possible!</p>
     </div>
-    <div class="contact">
+    <div class="contact" id="contact-me">
       <div class="contact_form">
         <div class="contact_info1">
           <div class="contact_info--item">
@@ -331,6 +334,7 @@
     <div>
     </div>
   </footer>
+  <script src="./JavaScript/index.js"></script>
 </body>
 
 </html>

@@ -376,12 +376,22 @@ form textarea {
  justify-content: center;
 }
 /*css for blogs*/
+#Blogs{
+  transform: translateY(50px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+#blog.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
 .blog {
   display: flex;
   justify-content: space-between;
   width: 90%;
   margin: auto;
   gap: 2rem;
+  
+ 
 }
 .blog_card {
   display: flex;

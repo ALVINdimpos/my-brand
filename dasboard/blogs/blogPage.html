@@ -42,7 +42,7 @@
                     </button>
                 </div>
                 <div class="user">
-                    <a href="#" class="btn"><i class="fa fa-plus" aria-hidden="true"></i>
+                    <a href="#" class="btn" onclick="toggleForm()" ><i class="fa fa-plus" aria-hidden="true"></i>
                         Add New</a>
                     <i class="fa fa-bell" aria-hidden="true"></i>
                     <div class="img-case">
@@ -52,6 +52,40 @@
             </div>
         </div>
         <div class="content">
+
+
+            <div class="overlay">
+                <form id="myForm">
+                    <div class="con">
+                        <header class="head-form">
+                            <h2> Add blog</h2>
+                            <p>Add blog here using </p>
+                        </header>
+                        <br>
+                        <div class="field-set">
+
+                            <input class="form-input" id="txt-input" type="text" placeholder="Title" required>
+
+                            <br>
+
+                            <input class="form-input" id="txt-input" type="text" placeholder="Description" required>
+
+                            <br>
+
+                            <input class="form-input" id="txt-input" type="text" placeholder="Date" required>
+
+                            <br>
+
+                            <input class="form-input" type="file" id="file" aria-label="File browser example">
+                            <span class="file-custom"></span>
+                            <br>
+                            <button class="log_in">Add </button>
+                        </div>
+
+                </form>
+            </div>
+
+
             <div class="content-2">
                 <div class="recent-payments">
                     <div class="title">
@@ -110,6 +144,7 @@
             </div>
         </div>
     </div>
+    <script src="../../JavaScript/index.js"></script>
 </body>
 
 </html>
