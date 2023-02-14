@@ -18,17 +18,22 @@ function scrollToContactMe() {
     event.preventDefault();
   
     // Validate the form inputs
-    const email = document.querySelector('#email').value;
+    const emailInput = document.querySelector('#email');
+  const email = emailInput.value;
     const password = document.querySelector('#password').value;
     const confirmPassword = document.querySelector('#confirm-password').value;
     if (!email) {
-      alert('Please enter your email');
-      return;
+        emailInput.setCustomValidity('Please enter your email');
+        emailInput.style.borderColor = 'red';
+        emailInput.reportValidity();
+        return;
     }
   
     if (!isValidEmail(email)) {
-      alert('Please enter a valid email');
-      return;
+        emailInput.setCustomValidity('Please enter a valid email');
+        emailInput.style.borderColor = 'red';
+        emailInput.reportValidity();
+        return;
     }
   
     if (!password) {
