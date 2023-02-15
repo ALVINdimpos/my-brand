@@ -1,0 +1,31 @@
+{
+    "Blogs":[
+        {
+            "id":1,
+            "image":"https://unsplash.com/photos/58Hygw0bS-M",
+            "title":"The Benefits of Meditation: Why It's More Than Just a Trend",
+            "date":"10/10/2020",
+            "author":"Alvin",
+            "body":"Meditation has been around for thousands of years, but it's only recently that it's been gaining popularity in the Western world.",
+            "likes":30
+        },
+        {
+            "id":1,
+            "image":"",
+            "title":"The Benefits of Meditation: Why It's More Than Just a Trend",
+            "date":"10/10/2020",
+            "author":"Alvin",
+            "body":"Meditation has been around for thousands of years, but it's only recently that it's been gaining popularity in the Western world.",
+            "likes":30
+        },
+        {
+            "id":1,
+            "image":"",
+            "title":"The Benefits of Meditation: Why It's More Than Just a Trend",
+            "date":"10/10/2020",
+            "author":"Alvin",
+            "body":"Meditation has been around for thousands of years, but it's only recently that it's been gaining popularity in the Western world.",
+            "likes":30
+        }
+    ]
+}
