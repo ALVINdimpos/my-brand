@@ -62,7 +62,7 @@ function isValidEmail(email) {
 }
 
 const renderBlogs =async()=>{
-  const response = await fetch(' http://localhost:3000/Blogs');
+  const response = await fetch(' http://localhost:3000/Blogs?_sort=date&_order=desc&_limit=3');
   const Blogs = await response.json();
   const BlogsContainer = document.querySelector('#blog_card');
   let template = '';
@@ -70,7 +70,7 @@ const renderBlogs =async()=>{
     template += `
     <div class="blog_card--item">
     <a href="./Pages/ViewBlog.html?id=${post.id}">
-      <img src="" alt="">
+      <img src="${post.image}" alt="">
      </a>
     <div class="blog_card--item--text">
       <h1>${post.title}</h1>
