@@ -10,30 +10,42 @@
       "likes": 30
     },
     {
-      "id": 2,
-      "image": "https://www.w3schools.com/html/img_car.jpg",
-      "title": "The Benefits of Meditation: Why It's More Than Just a Trend",
-      "date": "10/10/2020",
-      "author": "Alvin",
-      "body": "Meditation has been around for thousands of years, but it's only recently that it's been gaining popularity in the Western world.",
-      "likes": 30
+      "author": "testing ",
+      "title": "tell me ",
+      "body": "tell ",
+      "date": "teest",
+      "image": "https://www.w3schools.com/html/img_avatar.png",
+      "id": 2
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "image": "https://www.w3schools.com/html/pic_trulli.jpg",
+      "name": "The Benefits of Meditation: Why It's More Than Just a Trend",
+      "date": "10/10/2020"
     },
     {
-      "id": 3,
-      "image": "https://www.w3schools.com/html/img_avatar.png",
-      "title": "The Benefits of Meditation: Why It's More Than Just a Trend",
-      "date": "10/10/2020",
-      "author": "Alvin",
-      "body": "Meditation has been around for thousands of years, but it's only recently that it's been gaining popularity in the Western world.",
-      "likes": 30
+      "name": "",
+      "date": "",
+      "image": "",
+      "id": 2
     },
     {
-      "author": "alvin",
-      "title": "how to manip",
-      "body": "ggggggggggggggggggggggggggggg",
-      "date": "10/11/2001",
-      "image": "https://www.w3schools.com/html/img_avatar.png",
-      "id": 4
+      "name": "",
+      "date": "",
+      "image": "",
+      "id": 3
+    }
+  ],
+  "querries": [
+    {
+      "name": "alvin",
+      "email": "fistonalvin@gm.com",
+      "subject": "greating",
+      "budget": "38",
+      "message": "hiii",
+      "id": 2
     }
   ]
 }

@@ -271,14 +271,13 @@ td {
 }
 #myForm{
   width: 450px;
-  min-height: 500px;
   height: auto;
   border-radius: 5px;
   margin: 2% auto;
   box-shadow: 0px 4px 4px rgba(2, 2, 2, 0.25);
   padding: 2%;
   background: #4f6e7d;
- display: none;
+  display: none;
 }
 /* form Container */
 form .con {

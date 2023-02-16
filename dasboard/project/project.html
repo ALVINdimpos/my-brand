@@ -54,28 +54,25 @@
         <form id="myForm">
             <div class="con">
                 <header class="head-form">
-                    <h2> Add blog</h2>
-                    <p>Add blog here using </p>
+                    <h2> Add project</h2>
+                    <p>Add project here using </p>
                 </header>
                 <br>
                 <div class="field-set">
 
-                    <input class="form-input" id="txt-input" type="text" placeholder="Title" required>
+                    <input class="form-input" id="Name" type="text" placeholder="Name" required>
 
                     <br>
 
-                    <input class="form-input" id="txt-input" type="text" placeholder="Description" required>
+                    <input class="form-input" id="Date" type="text" placeholder="Date" required>
 
                     <br>
 
-                    <input class="form-input" id="txt-input" type="text" placeholder="Date" required>
+                    <input class="form-input" id="URL" type="URL" placeholder="Project URL" required>
 
                     <br>
-
-                    <input class="form-input" type="file" id="file" aria-label="File browser example">
-                    <span class="file-custom"></span>
                     <br>
-                    <button class="log_in">Add </button>
+                    <button class="log_in" onclick="postproject()" type="submit">Add </button>
                 </div>
 
         </form>
@@ -90,51 +87,18 @@
               <th>Photo</th>
               <th>Name</th>
               <th>date</th>
-              <td></td>
-              <td></td>
               <th>option</th>
             </tr>
-            <tr>
-              <td><img src="../../Images/project1.jpg" alt=""></td>
-              <td>speach app</td>
-              <td>12/12/2021</td>
-              <td></td>
-              <td></td>
-              <td><i class="fa fa-eye" aria-hidden="true"> </i>
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-              </td>
-            </tr>
-            <tr>
-              <td><img src="../../Images/project1.jpg" alt=""></td>
-              <td>speach app</td>
-              <td>12/12/2021</td>
-              <td></td>
-              <td></td>
-              <td><i class="fa fa-eye" aria-hidden="true"> </i>
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-              </td>
-            </tr>
-            <tr>
-              <td><img src="../../Images/project1.jpg" alt=""></td>
-              <td>speach app</td>
-              <td>12/12/2021</td>
-              <td></td>
-              <td></td>
-              <td><i class="fa fa-eye" aria-hidden="true"> </i>
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-              </td>
-            </tr>
+            <tbody id="project">
 
+            </tbody>
 
           </table>
         </div>
       </div>
     </div>
   </div>
-  <script src="../../JavaScript/index.js"></script>
+  <script src="../../JavaScript/project.js"></script>
 </body>
 
 </html>

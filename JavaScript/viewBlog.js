@@ -13,7 +13,7 @@ const renderBlog= async () => {
 	<main>
 		<article>
 			<h2>${blog.title}</h2>
-			<img src="blog-image.jpg" alt="Blog Image">
+			<img src="${blog.image}" alt="Blog Image">
 			<p>${blog.body}</p>
 			<div class="like">
 				<button id="like-btn">Like</button>
