@@ -271,7 +271,6 @@ td {
 }
 #myForm{
   width: 450px;
-  min-height: 500px;
   height: auto;
   border-radius: 5px;
   margin: 2% auto;
@@ -282,15 +281,13 @@ td {
 }
 /* form Container */
 form .con {
-  display: -webkit-flex;
   display: flex;
-
+ flex-direction: column;
   -webkit-justify-content: space-around;
   justify-content: space-around;
 
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-
     margin: 0 auto;
 }
 

@@ -16,7 +16,7 @@
             <h1>ALVIN<span>FISTON</span></h1>
         </div>
         <ul>
-            <li><a href="../landingPage.html"><i class="fa fa-th-large" aria-hidden="true"></i></i>&nbsp; <span>
+            <li><a href="../landingPage.html"><i class="fa fa-th-large" aria-hidden="true"></i>&nbsp; <span>
                         Dashboard
                     </span></a> </li>
             <li><a href="../project/project.html"><i class="fa fa-briefcase" aria-hidden="true"></i>
@@ -42,11 +42,11 @@
                     </button>
                 </div>
                 <div class="user">
-                    <a href="#" class="btn" onclick="toggleForm()" ><i class="fa fa-plus" aria-hidden="true"></i>
+                    <a href="#" class="btn" onclick="toggleForm()"><i class="fa fa-plus" aria-hidden="true"></i>
                         Add New</a>
                     <i class="fa fa-bell" aria-hidden="true"></i>
                     <div class="img-case">
-                        <img src="../../../Images/user.png" alt="">
+                        <img src="../../Images/user.png" alt="">
                     </div>
                 </div>
             </div>
@@ -63,25 +63,26 @@
                         </header>
                         <br>
                         <div class="field-set">
-
-                            <input class="form-input" id="txt-input" type="text" placeholder="Title" required>
-
+                            <input class="form-input" id="Author" type="text" placeholder="Author" required>
+        
                             <br>
-
-                            <input class="form-input" id="txt-input" type="text" placeholder="Description" required>
-
+                            <input class="form-input" id="Title" type="text" placeholder="Title" required>
+        
                             <br>
-
-                            <input class="form-input" id="txt-input" type="text" placeholder="Date" required>
-
+        
+                            <input class="form-input" id="Body" type="text" placeholder="Body" required>
+        
                             <br>
-
-                            <input class="form-input" type="file" id="file" aria-label="File browser example">
-                            <span class="file-custom"></span>
+        
+                            <input class="form-input" id="Date" type="text" placeholder="Date" required>
+        
                             <br>
-                            <button class="log_in">Add </button>
+        
+                            <input class="form-input" type="URL" id="URL" placeholder="image URL">
+                            <br>
+                            <button class="log_in" onclick="postBlog()" type="submit">Add </button>
                         </div>
-
+        
                 </form>
             </div>
 
@@ -98,53 +99,17 @@
                             <th>Date</th>
                             <th>Action</th>
                         </tr>
-                        <tr>
-                            <td>How to create a website</td>
-                            <td>Lorem ipsum dolor sit amet consectetur </td>
-                            <td>10/10/2020</td>
-                            <td>
-                                <i class="fa fa-eye" aria-hidden="true"> </i>
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        <tbody id="Blogs">
 
+                        </tbody>
 
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>How to create a website</td>
-                            <td>Lorem ipsum dolor sit amet consectetur </td>
-                            <td>10/10/2020</td>
-                            <td><i class="fa fa-eye" aria-hidden="true"> </i>
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>How to create a website</td>
-                            <td>Lorem ipsum dolor sit amet consectetur </td>
-                            <td>10/10/2020</td>
-                            <td><i class="fa fa-eye" aria-hidden="true"> </i>
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>How to create a website</td>
-                            <td>Lorem ipsum dolor sit amet consectetur </td>
-                            <td>10/10/2020</td>
-                            <td><i class="fa fa-eye" aria-hidden="true"> </i>
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
-                                <i class="fa fa-trash-o" aria-hidden="true"></i>
-                            </td>
-                        </tr>
                     </table>
                 </div>
 
             </div>
         </div>
     </div>
-    <script src="../../JavaScript/index.js"></script>
+    <script src="../../JavaScript/blogs.js"></script>
 </body>
 
 </html>

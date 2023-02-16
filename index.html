@@ -36,7 +36,7 @@
     </ul>
     <div class="nav-right">
       <button>
-        <a href="./Login.html" style="text-decoration: none; color: white;">Login</a>
+        <a href="./Pages/Login.html" style="text-decoration: none; color: white;">Login</a>
       </button>
     </div>
   </nav>
@@ -212,33 +212,11 @@
   </section>
   <section class="blogs" id="Blogs">
     <h1 class="title"> My <span>Latest Blog</span> Post</h1>
-    <div class="blog_card">
-      <div class="blog_card--item">
-        <img src="./Images/meditation.png" alt="">
-        <div class="blog_card--item--text">
-          <h1>The Benefits of Meditation: Why It's More Than Just a Trend</h1>
-          <p>By <span>Alvin</span> / <span> 10/10/2020</span></p>
-          <p>Meditation has been around for thousands of years, but it's only recently that it's been gaining popularity
-            in the Western world.</p>
-        </div>
-      </div>
-      <div class="blog_card--item">
-        <img src="./Images/thinking.webp" alt="">
-        <div class="blog_card--item--text">
-          <h1>The Power of Positive Thinking: How to Train Your Brain for Happiness</h1>
-          <p>By <span>Alvin</span> / <span> 10/10/2020</span></p>
-          <p>We all have the power to shape our own thoughts and emotions, but many of us don't realize it.</p>
-        </div>
-      </div>
-      <div class="blog_card--item">
-        <img src="./Images/quick-mindfulness-tricks.webp" alt="">
-        <div class="blog_card--item--text">
-          <h1>The Art of Mindfulness: How to Live in the Present Moment</h1>
-          <p>By <span>Alvin</span> / <span> 10/10/2020</span></p>
-          <p>In a world that's constantly on the go, mindfulness is a valuable skill that can help us slow down and live
-            in the moment.</p>
-        </div>
-      </div>
+    <div class="blog_card" id="blog_card">
+     <!-- where blog will appeaer -->
+     <a href="./Pages/ViewBlog.html">
+      <img src="" alt="">
+     </a>
     </div>
   </section>
   <section id="Contact">
@@ -311,7 +289,7 @@
           </div>
           <textarea name="" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
           <div class="invalid-feedback">Please enter a message</div>
-           <button type="submit" class="form__button2">Send</button>
+           <button type="submit" onclick="postQuerry()" class="form__button2">Send</button>
         </form>
       </div>
 
@@ -353,8 +331,9 @@
     <div>
     </div>
   </footer>
-  <!-- <script src="./JavaScript/index.js"></script> -->
-  <script src="./main.js"></script>
+ <script src="./JavaScript/index.js"></script>
+  <!-- <script src="./main.js"></script> -->
+  <script src="./JavaScript/querries.js"></script>
 
 </body>
 
