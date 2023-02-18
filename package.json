@@ -2,9 +2,10 @@
   "name": "my-brand",
   "version": "1.0.0",
   "description": "<h1 align=\"center\">Hi 👋, I'm Alvin Fiston</h1>\r <h3 align=\"center\">A passionate frontend developer from Rwanda</h3>",
-  "main": "main.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
