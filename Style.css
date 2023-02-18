@@ -209,7 +209,7 @@ input[type="checkbox"]:checked ~ .nav-list {
   gap: 1rem;
 }
 .skills_wraper p {
-  font-weight: lighter;
+  font-weight:lighter;
   font-size: 20px;
 }
 .skills_wraper i {
@@ -649,7 +649,9 @@ p {
   top: 20%;
   left: 90%;
 }
-
+.skills_wraper i {
+  font-size:250px;
+}
 .form__email {
 	width: 80%;
   margin-left:0.2rem;
