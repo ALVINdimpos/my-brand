@@ -113,7 +113,7 @@ const updateBlog = async () => {
   blogForm.reset(); 
   renderBlogs();
 };
-
+renderBlogs()
 fetchBlogCount();
 window.addEventListener("DOMContentLoaded", () => renderBlogs());
 
