@@ -6,6 +6,28 @@ function toggleForm() {
     x.style.display = "none";
   }
 }
+const postproject = async (event) => {
+  event.preventDefault();
+  const name = document.querySelector("#Name").value;
+  const date = document.querySelector("#Date").value;
+  const image = document.querySelector("#URL").value;
+  const response = await fetch("http://localhost:3000/projects", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name,
+      date,
+      image,
+    }),
+  });
+  document.querySelector("#Name").value = "";
+  document.querySelector("#Date").value = "";
+  document.querySelector("#URL").value = "";
+  alert("Your project has been added successfully");
+};
+
 const renderprojects = async () => {
   const response = await fetch("http://localhost:3000/projects");
   const projects = await response.json();
@@ -36,26 +58,6 @@ const deleteproject = async (id) => {
   });
   const data = await response.json();
   console.log(data);
-};
-const postproject = async () => {
-  const name = document.querySelector("#Name").value;
-  const date = document.querySelector("#Date").value;
-  const image = document.querySelector("#URL").value;
-  const response = await fetch("http://localhost:3000/projects", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      name,
-      date,
-      image,
-    }),
-  });
-  document.querySelector("#Name").value = "";
-  document.querySelector("#Date").value = "";
-  document.querySelector("#URL").value = "";
-  alert("Your project has been added successfully");
 };
 
 window.addEventListener("DOMContentLoaded", () => renderprojects());

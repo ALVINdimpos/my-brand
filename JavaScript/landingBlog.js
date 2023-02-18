@@ -1,5 +1,5 @@
 const renderBlogs =async()=>{
-    const response = await fetch(' http://localhost:3000/Blogs?limit=1');
+    const response = await fetch(' http://localhost:3000/Blogs');
     const Blogs = await response.json();
     const BlogsContainer = document.querySelector('#recentBlogs');
     let template = '';
@@ -16,5 +16,40 @@ const renderBlogs =async()=>{
     );
     BlogsContainer.innerHTML = template;
   }
-   
+  // render project.
+  const renderProjects =async()=>{
+    const response = await fetch(' http://localhost:3000/projects');
+    const projects = await response.json();
+    const projectsContainer = document.querySelector('#recentProjects');
+    let template = '';
+    projects.forEach(project => {
+      template += `
+      <tr>
+              <td><img src="${project.image}" alt=""></td>
+              <td>${project.name}</td>
+              <td><a href="#" class="btn">View</a></td>
+            </tr>
+    `
+    }
+    );
+    projectsContainer.innerHTML = template;
+  }
+  const blogCountElement = document.querySelector("#count");
+
+  const fetchBlogCount = async () => {
+    const response = await fetch("http://localhost:3000/Blogs");
+    const blogs = await response.json();
+    blogCountElement.innerHTML = `<span>${blogs.length}</span>`
+  };
+  // the total number of project.
+  const projectCountElement = document.querySelector("#projectCount");
+  const fetchProjectCount = async () => {
+    const response = await fetch("http://localhost:3000/projects");
+    const projects = await response.json();
+    projectCountElement.innerHTML = `<span>${projects.length}</span>`
+  };
+  fetchBlogCount();
+  fetchProjectCount();
+  renderBlogs();
+  renderProjects();
   window.addEventListener('DOMContentLoaded', ()=>renderBlogs());
