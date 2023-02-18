@@ -75,7 +75,7 @@ const renderBlogs =async()=>{
     <div class="blog_card--item--text">
       <h1>${post.title}</h1>
       <p>By <span>${post.author}</span> / <span> ${post.date}</span></p>
-      <p>${post.body}</p>
+      <p>${post.body.slice(0,100)}</p>
     </div>
   </div>
   `
