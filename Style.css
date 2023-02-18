@@ -775,6 +775,10 @@ p {
     gap: 3rem;
     margin-bottom: 2rem;
   }
+  .skills{
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
   .blog_card--item {
     width: 90%;
     margin: auto;
