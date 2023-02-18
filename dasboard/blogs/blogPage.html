@@ -78,9 +78,9 @@
         
                             <br>
         
-                            <input class="form-input" type="URL" id="URL" placeholder="image URL">
+                            <input class="form-input" type="URL" id="URLim" placeholder="image URL">
                             <br>
-                            <button class="log_in" onclick="postBlog()" type="submit">Add </button>
+                            <button class="log_in" onclick="postBlog()" type="button">Add </button>
                         </div>
         
                 </form>
@@ -107,6 +107,37 @@
                 </div>
 
             </div>
+        <div id="edit-form-container" style="display:none;">
+            <form id="edit-form">
+                <div class="con">
+                    <header class="head-form">
+                        <h2> Add blog</h2>
+                        <p>Add blog here using </p>
+                    </header>
+                    <br>
+                    <div class="field-set">
+                        <input class="form-input" id="Author" type="text" placeholder="Author" required>
+    
+                        <br>
+                        <input class="form-input" id="Title" type="text" placeholder="Title" required>
+    
+                        <br>
+    
+                        <input class="form-input" id="Body" type="text" placeholder="Body" required>
+    
+                        <br>
+    
+                        <input class="form-input" id="Date" type="text" placeholder="Date" required>
+    
+                        <br>
+    
+                        <input class="form-input" type="URL" id="URLim" placeholder="image URL">
+                        <br>
+                        <button class="log_in" onclick="updateBlog()" type="submit">Add </button>
+                    </div>
+    
+            </form>
+        </div>
         </div>
     </div>
     <script src="../../JavaScript/blogs.js"></script>

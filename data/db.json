@@ -1,41 +1,53 @@
 {
   "Blogs": [
     {
-      "id": 1,
-      "image": "https://www.w3schools.com/html/pic_trulli.jpg",
-      "title": "The Benefits of Meditation: Why It's More Than Just a Trend",
-      "date": "10/10/2020",
-      "author": "Alvin",
-      "body": "Meditation has been around for thousands of years, but it's only recently that it's been gaining popularity in the Western world.",
-      "likes": 30
+      "author": "alvin@@@",
+      "title": "how to manip",
+      "body": "ggggggggggggggggggggggggggggg",
+      "date": "10/11/2001",
+      "image": "https://dmitripavlutin.com/static/0f0a014fdd0f05440b9ea1b6bd33a52e/92373/birds.avif",
+      "id": 3,
+      "comments": {
+        "id": 1,
+        "comment": "hiii"
+      }
     },
     {
-      "author": "testing ",
-      "title": "tell me ",
-      "body": "tell ",
-      "date": "teest",
-      "image": "https://www.w3schools.com/html/img_avatar.png",
-      "id": 2
+      "author": "teste1",
+      "title": "teeess",
+      "body": "bodytes",
+      "date": "10/11/2001",
+      "image": "https://unsplash.com/photos/58Hygw0bS-M",
+      "id": 4,
+      "comments": {
+        "id": 1,
+        "comment": "hiii",
+        "date": "10/10/2020"
+      }
+    },
+    {
+      "author": "alvinZZZZZZZZZZZZZZ",
+      "title": "teeessf(t(yrt",
+      "body": "rlncjghnrchcnzbcnjh,nlgnqcskglgh",
+      "date": "10/11/2001nnnnnnn",
+      "image": "https://unsplash.com/photos/58Hygw0bS-M",
+      "id": 6
+    },
+    {
+      "author": "alvin@@@",
+      "title": "killl",
+      "body": "rlncjghnrchcnzbcnjh,nlgnqcskglgh",
+      "date": "10/11/2001",
+      "image": "https://unsplash.com/photos/58Hygw0bS-M",
+      "id": 7
     }
   ],
   "projects": [
     {
       "id": 1,
       "image": "https://www.w3schools.com/html/pic_trulli.jpg",
-      "name": "The Benefits of Meditation: Why It's More Than Just a Trend",
+      "name": "votting app",
       "date": "10/10/2020"
-    },
-    {
-      "name": "",
-      "date": "",
-      "image": "",
-      "id": 2
-    },
-    {
-      "name": "",
-      "date": "",
-      "image": "",
-      "id": 3
     }
   ],
   "querries": [
@@ -46,6 +58,14 @@
       "budget": "38",
       "message": "hiii",
       "id": 2
+    },
+    {
+      "name": "test",
+      "email": "fistonalvin@gm.com",
+      "subject": "test",
+      "budget": "11",
+      "message": "am just testing",
+      "id": 3
     }
   ]
 }

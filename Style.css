@@ -214,6 +214,7 @@ input[type="checkbox"]:checked ~ .nav-list {
 }
 .skills_wraper img {
   width: 400px;
+  height: 350px;
 }
 .skills {
   display: flex;
@@ -547,6 +548,80 @@ footer a {
   text-decoration: none;
   color: #47d8e1;
 }
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%,
+}
+
+.service-card {
+  background: radial-gradient(
+    75.85% 168.08% at 25.62% 78.02%,
+    rgba(237, 238, 248, 0.3) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 30px;
+  position: relative;
+  transition: all 0.5s ease;
+  width: 40%;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  align-items: center;
+  background: radial-gradient(
+    75.85% 168.08% at 25.62% 78.02%,
+    rgba(237, 238, 248, 0.3) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  font-size: 50px;
+  height: 80px;
+  justify-content: center;
+  left: -25px;
+  position: absolute;
+  top: -25px;
+  width: 80px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-top: 15px;
+  text-align: justify;
+}
+
+.fa-laptop-code {
+  transform: rotate(45deg);
+}
+
+.fa-mobile-alt {
+  transform: rotate(90deg);
+}
+
+.fa-database {
+  transform: rotate(135deg);
+}
+
+.fa-cloud {
+  transform: rotate(180deg);
+}
+
 @media screen and (max-width: 768px) {
   .nav-list {
     display: none;

@@ -87,4 +87,3 @@ contactForm.addEventListener('submit', (event) => {
 
 	}
 });
-
