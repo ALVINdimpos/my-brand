@@ -36,11 +36,11 @@
     <div class="container">
         <div class="header">
             <div class="nav">
-                <div class="search">
-                    <input type="text" placeholder="Search..">
-                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                </div>
+                <form class="search">
+                    <input type="text" name="text" placeholder="Search for blogs...">
+                     <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
+                  
                 <div class="user">
                     <a href="#" class="btn" onclick="toggleForm()"><i class="fa fa-plus" aria-hidden="true"></i>
                         Add New</a>
@@ -85,8 +85,6 @@
         
                 </form>
             </div>
-
-
             <div class="content-2">
                 <div class="recent-payments">
                     <div class="title">
@@ -133,7 +131,7 @@
     
                         <input class="form-input" type="URL" id="URLim" placeholder="image URL">
                         <br>
-                        <button class="log_in" onclick="updateBlog()" type="submit">Add </button>
+                        <button class="log_in"  type="submit" id="update-button">Add </button>
                     </div>
     
             </form>

@@ -1,16 +1,12 @@
 {
   "Blogs": [
     {
-      "author": "alvin@@@",
-      "title": "how to manip",
-      "body": "ggggggggggggggggggggggggggggg",
+      "title": "w to manip",
+      "author": "ulvin@@@",
       "date": "10/11/2001",
+      "body": "ggggggggggggggggggggggggggggg",
       "image": "https://dmitripavlutin.com/static/0f0a014fdd0f05440b9ea1b6bd33a52e/92373/birds.avif",
-      "id": 3,
-      "comments": {
-        "id": 1,
-        "comment": "hiii"
-      }
+      "id": 3
     },
     {
       "author": "teste1",
@@ -67,14 +63,6 @@
     }
   ],
   "querries": [
-    {
-      "name": "alvin",
-      "email": "fistonalvin@gm.com",
-      "subject": "greating",
-      "budget": "38",
-      "message": "hiii",
-      "id": 2
-    },
     {
       "name": "test",
       "email": "fistonalvin@gm.com",

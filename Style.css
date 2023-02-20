@@ -632,6 +632,23 @@ p {
   .navbar button {
     display: none;
   }
+  .skills_wraper i {
+    font-size:280px;
+  }
+  .form__email {
+    width: 80%;
+    margin-left:0.2rem;
+  
+  }
+  
+.notice {
+	width: 80%;
+}
+.form__button{
+  margin-top: 1rem;
+  width: 98%;
+  margin-left:0.2rem;
+}
 }
 .circles {
   position: absolute;
@@ -649,22 +666,7 @@ p {
   top: 20%;
   left: 90%;
 }
-.skills_wraper i {
-  font-size:250px;
-}
-.form__email {
-	width: 80%;
-  margin-left:0.2rem;
 
-}
-.notice {
-	width: 80%;
-}
-.form__button{
-  margin-top: 1rem;
-  width: 98%;
-  margin-left:0.2rem;
-}
 .social{
   display: flex;
   justify-content: space-between;

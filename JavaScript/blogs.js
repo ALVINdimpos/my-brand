@@ -1,3 +1,4 @@
+// Get the modal
 const toggleForm = ()=>{
   var x = document.getElementById("myForm");
   if (x.style.display === "none") {
@@ -5,12 +6,6 @@ const toggleForm = ()=>{
   } else {
     x.style.display = "none";
   }
-}
-// Get the blog list from the API
-async function getBlogList() {
-  const response = await fetch("http://localhost:3000/Blogs");
-  const data = await response.json();
-  return data;
 }
 // post blog by using form after reload and clear form and give feed back if successfull added
 const postBlog = async () => {
@@ -37,9 +32,14 @@ const postBlog = async () => {
   alert("Your blog has been added successfully")
   renderBlogs();
 };
-
-const renderBlogs = async () => {
-  const Blogs = await getBlogList();
+// render blogs
+const renderBlogs = async (searchText) => {
+  let url="http://localhost:3000/Blogs";
+  if(searchText){
+    url += `?q=${searchText}`;
+  }
+  const response = await fetch(url);
+  const Blogs = await response.json();
   const BlogsContainer = document.querySelector("#Blogs");
   let template = "";
   Blogs.forEach((blogs) => {
@@ -58,6 +58,17 @@ const renderBlogs = async () => {
   });
   BlogsContainer.innerHTML = template;
 };
+// search blog
+const search = () => {
+  const searchForm = document.querySelector('.search');
+  const searchText = searchForm.elements.text.value;
+  renderBlogs(searchText);
+}
+const searchForm = document.querySelector('.search');
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  search();
+});
 
 // delete blog
 const deleteBlog = async (id) => {
@@ -67,7 +78,9 @@ const deleteBlog = async (id) => {
     renderBlogs();
 };
 // Edit a blog
+let currentBlogId;
 async function editBlog(id) {
+  currentBlogId = id;
   var x = document.getElementById("edit-form-container");
   if (x.style.display === "none") {
     x.style.display = "block";
@@ -85,17 +98,22 @@ async function editBlog(id) {
   blogForm.elements.Body.value = blog.body;
   blogForm.elements.URLim.value = blog.image;
   // Change the form action to update the blog
+  currentBlogId = id;
   blogForm.action = `http://localhost:3000/Blogs/${id}`;
+  const updateButton = document.getElementById("update-button");
+  updateButton.addEventListener("click", () => updateBlog(id));
 }
+
 // Submit the edited blog
 const updateBlog = async () => {
+  console.log('currentBlogId:', currentBlogId);
   const blogForm = document.getElementById("edit-form");
   const title = blogForm.elements.Title.value;
   const author = blogForm.elements.Author.value;
   const date = blogForm.elements.Date.value;
   const body = blogForm.elements.Body.value;
   const image = blogForm.elements.URLim.value;
-  const response = await fetch(`http://localhost:3000/Blogs/${id}`, {
+  const response = await fetch(`http://localhost:3000/Blogs/${currentBlogId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -108,13 +126,10 @@ const updateBlog = async () => {
       image
     }),
   });
-  const data = response.json()
-  console.log(data)
   blogForm.reset(); 
   renderBlogs();
 };
-renderBlogs()
-fetchBlogCount();
+renderBlogs();
 window.addEventListener("DOMContentLoaded", () => renderBlogs());
 
 
