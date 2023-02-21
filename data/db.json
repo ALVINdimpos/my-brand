@@ -1,7 +1,7 @@
 {
   "Blogs": [
     {
-      "title": "w to manip",
+      "title": "manip",
       "author": "ulvin@@@",
       "date": "10/11/2001",
       "body": "ggggggggggggggggggggggggggggg",
@@ -9,17 +9,12 @@
       "id": 3
     },
     {
-      "author": "teste1",
-      "title": "teeess",
-      "body": "bodytes",
+      "title": "kunte",
+      "author": "kunte",
       "date": "10/11/2001",
+      "body": "bodytes",
       "image": "https://unsplash.com/photos/58Hygw0bS-M",
-      "id": 4,
-      "comments": {
-        "id": 1,
-        "comment": "hiii",
-        "date": "10/10/2020"
-      }
+      "id": 4
     },
     {
       "author": "Alvin",
@@ -42,8 +37,16 @@
       "title": "Best Way to Learn Coding Yourself: Tips and Resources for Beginners",
       "body": "Learning to code is a valuable skill in today's digital age, and it's never been easier to get started on your own. Whether you're looking to start a new career in tech or just want to build your own website, learning to code can open up a world of possibilities. But with so many programming languages and resources out there, where do you begin? In this post, we'll provide tips and resources for beginners looking to learn coding on their own.",
       "date": "4/18/2023",
-      "image": "",
+      "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190813181110/7-Tips-and-Tricks-to-Learn-Programming-Faster.png",
       "id": 10
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "name": "alvin",
+      "profile": "https://www.w3schools.com/html/img_avatar.png",
+      "comment": ""
     }
   ],
   "projects": [
@@ -70,6 +73,14 @@
       "budget": "12",
       "message": "hiiiiiiiiiiiiiiiiiiiiii",
       "id": 4
+    },
+    {
+      "name": "KUNTE",
+      "email": "fistonalvin@gm.com",
+      "subject": "greating",
+      "budget": "24567",
+      "message": "hhhhhhhhhhhhhhhhhhh",
+      "id": 5
     }
   ]
 }

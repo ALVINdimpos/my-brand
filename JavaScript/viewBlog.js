@@ -1,5 +1,11 @@
 const id = new URLSearchParams(window.location.search).get("id");
 const blogTitle = document.querySelector("#blogContainer");
+// current date
+const date = new Date();
+const day = date.getDate();
+const month = date.getMonth() + 1;
+const year = date.getFullYear();
+const currentDate = `${day}/${month}/${year}`;
 
 const renderBlog = async () => {
   const res = await fetch(`http://localhost:3000/blogs/${id}`);
@@ -24,7 +30,7 @@ const renderBlog = async () => {
 				<form>
 					<label for="comment">Comment:</label>
 					<textarea id="comment" name="comment" required></textarea>
-					<button type="submit" onclick="postComment()">Post</button>
+					<button type="submit" onclick="postComment(${blog.id})">Post</button>
 				</form>
 				<article>
 				<ul class="comments">
@@ -33,7 +39,7 @@ const renderBlog = async () => {
 					<img src="../Images/mine.png" alt="User Avatar">
 					  <div class="comment-meta">
 						<h3 class="comment-author">Username</h3>
-						<time class="comment-time">Timestamp</time>
+						<time class="comment-time">${currentDate}</time>
 					  </div>
 					  <div class="comment-actions">
 						<button class="like-button">Like</button>
@@ -68,7 +74,19 @@ const renderBlog = async () => {
     `;
   blogTitle.innerHTML = template;
 };
+  // post comments
+  const postComment = async (id) => {
+	const comment = document.querySelector("#comment").value;
+	const res = await fetch(`http://localhost:3000/comments/${id}`, {
 
+		method: "POST",
+		headers: { "Content-Type": "application/json" },
+		body: JSON.stringify({ comment }),
+	});
+	if (!res.ok) {
+		alert("Error");
+	}
+	  };
 window.addEventListener("DOMContentLoaded", () => {
   renderBlog();
 });
