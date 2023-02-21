@@ -4,7 +4,7 @@ const postQuerry = async () => {
   const subject = document.querySelector("#subject").value;
   const budget = document.querySelector("#budget").value;
   const message = document.querySelector("#message").value;
-  const response = await fetch("http://localhost:3000/querries", {
+  const response = await fetch("https://weary-teal-shoe.cyclic.app/querries", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -25,7 +25,7 @@ const postQuerry = async () => {
   alert("Your querry has been sent successfully thank you!");
 };
 const renderQuerries = async () => {
-    const response = await fetch("http://localhost:3000/querries");
+    const response = await fetch("https://weary-teal-shoe.cyclic.app/querries");
     const querries = await response.json();
     const querriesContainer = document.querySelector("#querry");
     let template = "";
@@ -47,7 +47,7 @@ const renderQuerries = async () => {
     querriesContainer.innerHTML = template;
   };
   const deletequerry = async (id) => {
-    const response = await fetch(`http://localhost:3000/querries/${id}`, {
+    const response = await fetch(`https://weary-teal-shoe.cyclic.app/querries/${id}`, {
       method: "DELETE",
     });
   };

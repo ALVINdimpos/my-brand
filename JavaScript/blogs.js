@@ -15,7 +15,7 @@ const postBlog = async () => {
   const date=postBlogForm.elements.Date.value ;
   const body=postBlogForm.elements.Body.value ;
   const image=postBlogForm.elements.URLim.value ;
-  const response = await fetch("http://localhost:3000/Blogs", {
+  const response = await fetch("https://weary-teal-shoe.cyclic.app/Blogs", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const postBlog = async () => {
 };
 // render blogs
 const renderBlogs = async (searchText) => {
-  let url="http://localhost:3000/Blogs";
+  let url="https://weary-teal-shoe.cyclic.app/Blogs";
   if(searchText){
     url += `?q=${searchText}`;
   }
@@ -72,7 +72,7 @@ searchForm.addEventListener('submit', (event) => {
 
 // delete blog
 const deleteBlog = async (id) => {
-    const response = await fetch(`http://localhost:3000/Blogs/${id}`, {
+    const response = await fetch(`https://weary-teal-shoe.cyclic.app/Blogs/${id}`, {
         method: "DELETE",
     });
     renderBlogs();
@@ -88,7 +88,7 @@ async function editBlog(id) {
     x.style.display = "none";
   }
   // Get the blog from the API
-  const response = await fetch(`http://localhost:3000/Blogs/${id}`);
+  const response = await fetch(`https://weary-teal-shoe.cyclic.app/Blogs/${id}`);
   const blog = await response.json();
   // Update the blog form with the blog data
   const blogForm = document.getElementById("edit-form");
@@ -99,7 +99,7 @@ async function editBlog(id) {
   blogForm.elements.URLim.value = blog.image;
   // Change the form action to update the blog
   currentBlogId = id;
-  blogForm.action = `http://localhost:3000/Blogs/${id}`;
+  blogForm.action = `https://weary-teal-shoe.cyclic.app/Blogs/${id}`;
   const updateButton = document.getElementById("update-button");
   updateButton.addEventListener("click", () => updateBlog(id));
 }
@@ -113,7 +113,7 @@ const updateBlog = async () => {
   const date = blogForm.elements.Date.value;
   const body = blogForm.elements.Body.value;
   const image = blogForm.elements.URLim.value;
-  const response = await fetch(`http://localhost:3000/Blogs/${currentBlogId}`, {
+  const response = await fetch(`https://weary-teal-shoe.cyclic.app/Blogs/${currentBlogId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
