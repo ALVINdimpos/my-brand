@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans";
 }
 body {
   min-height: 100vh;
@@ -307,7 +307,7 @@ header {
 
 header h2 {
   font-size: 250%;
-  font-family: 'Playfair Display', serif;
+  font-family: "Open Sans";
   color: white;
 }
 header p {letter-spacing: 0.05em;}
