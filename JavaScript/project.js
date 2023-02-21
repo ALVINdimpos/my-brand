@@ -11,7 +11,7 @@ const postproject = async (event) => {
   const name = document.querySelector("#Name").value;
   const date = document.querySelector("#Date").value;
   const image = document.querySelector("#URL").value;
-  const response = await fetch("http://localhost:3000/projects", {
+  const response = await fetch("https://weary-teal-shoe.cyclic.app/projects", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -29,7 +29,7 @@ const postproject = async (event) => {
 };
 
 const renderprojects = async () => {
-  const response = await fetch("http://localhost:3000/projects");
+  const response = await fetch("https://weary-teal-shoe.cyclic.app/projects");
   const projects = await response.json();
   const projectContainer = document.querySelector("#project");
   let template = "";
@@ -53,7 +53,7 @@ const renderprojects = async () => {
 };
 // delete project
 const deleteproject = async (id) => {
-  const response = await fetch(`http://localhost:3000/projects/${id}`, {
+  const response = await fetch(`https://weary-teal-shoe.cyclic.app/projects/${id}`, {
     method: "DELETE",
   });
   const data = await response.json();

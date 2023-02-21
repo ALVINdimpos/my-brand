@@ -1,5 +1,5 @@
 const renderBlogs =async()=>{
-    const response = await fetch(' http://localhost:3000/Blogs');
+    const response = await fetch(' https://weary-teal-shoe.cyclic.app/Blogs');
     const Blogs = await response.json();
     const BlogsContainer = document.querySelector('#recentBlogs');
     let template = '';
@@ -18,7 +18,7 @@ const renderBlogs =async()=>{
   }
   // render project.
   const renderProjects =async()=>{
-    const response = await fetch(' http://localhost:3000/projects');
+    const response = await fetch(' https://weary-teal-shoe.cyclic.app/projects');
     const projects = await response.json();
     const projectsContainer = document.querySelector('#recentProjects');
     let template = '';
@@ -37,14 +37,14 @@ const renderBlogs =async()=>{
   const blogCountElement = document.querySelector("#count");
 
   const fetchBlogCount = async () => {
-    const response = await fetch("http://localhost:3000/Blogs");
+    const response = await fetch("https://weary-teal-shoe.cyclic.app/Blogs");
     const blogs = await response.json();
     blogCountElement.innerHTML = `<span>${blogs.length}</span>`
   };
   // the total number of project.
   const projectCountElement = document.querySelector("#projectCount");
   const fetchProjectCount = async () => {
-    const response = await fetch("http://localhost:3000/projects");
+    const response = await fetch("https://weary-teal-shoe.cyclic.app/projects");
     const projects = await response.json();
     projectCountElement.innerHTML = `<span>${projects.length}</span>`
   };

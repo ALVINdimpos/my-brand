@@ -8,7 +8,7 @@ const year = date.getFullYear();
 const currentDate = `${day}/${month}/${year}`;
 
 const renderBlog = async () => {
-  const res = await fetch(`http://localhost:3000/blogs/${id}`);
+  const res = await fetch(`https://weary-teal-shoe.cyclic.app/Blogs/${id}`);
   const blog = await res.json();
   let template = "";
   template += `
@@ -77,7 +77,7 @@ const renderBlog = async () => {
   // post comments
   const postComment = async (id) => {
 	const comment = document.querySelector("#comment").value;
-	const res = await fetch(`http://localhost:3000/comments/${id}`, {
+	const res = await fetch(`https://weary-teal-shoe.cyclic.app/comments/${id}`, {
 
 		method: "POST",
 		headers: { "Content-Type": "application/json" },

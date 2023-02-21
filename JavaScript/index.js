@@ -62,7 +62,7 @@ function isValidEmail(email) {
 }
 
 const renderBlogs =async()=>{
-  const response = await fetch(' http://localhost:3000/Blogs?_sort=date&_order=desc&_limit=3');
+  const response = await fetch(' https://weary-teal-shoe.cyclic.app/Blogs?_sort=date&_order=desc&_limit=3');
   const Blogs = await response.json();
   const BlogsContainer = document.querySelector('#blog_card');
   let template = '';
