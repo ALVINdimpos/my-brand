@@ -26,6 +26,7 @@ const postproject = async (event) => {
   document.querySelector("#Date").value = "";
   document.querySelector("#URL").value = "";
   alert("Your project has been added successfully");
+  renderprojects();
 };
 
 const renderprojects = async () => {
@@ -56,8 +57,7 @@ const deleteproject = async (id) => {
   const response = await fetch(`https://weary-teal-shoe.cyclic.app/projects/${id}`, {
     method: "DELETE",
   });
-  const data = await response.json();
-  console.log(data);
+  renderprojects();
 };
 
 window.addEventListener("DOMContentLoaded", () => renderprojects());
