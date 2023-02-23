@@ -35,7 +35,7 @@ const renderBlog = async () => {
 				  <form>
 					  <label for="comment">Comment:</label>
 					  <textarea id="comment" name="comment" required></textarea>
-					  <button type="submit" onclick="event.preventDefault(); postComment(${blog.id}, event)">Post</button>
+					  <button type="submit" onclick="postComment(${blog.id}, event)">Post</button>
 				  </form>
 				  <article>
 				  <ul class="comments">
@@ -68,23 +68,42 @@ const renderBlog = async () => {
   
 // post comment
 const postComment = async (id, event) => {
-	event.preventDefault(); // prevent default form submission behavior
-  
+	event.preventDefault();
+	
 	const commentInput = document.querySelector("#comment");
-	const comment = commentInput.value.trim(); // get the value of the comment input and trim any whitespace
-  
-	if (comment !== "") { // make sure the comment is not empty
-	  const res = await fetch(`https://weary-teal-shoe.cyclic.app/comments/${id}`, {
+	const comment = commentInput.value.trim();
+	
+	if (comment !== "") {
+	  const res = await fetch("https://weary-teal-shoe.cyclic.app/comments", {
 		method: "POST",
 		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify({ comment }),
+		body: JSON.stringify({ blogId: id, comment }),
 	  });
-     document.querySelector("#comment").value = "";
-	 alert("Your querry has been added successfully")
-  };
-};
-
   
+	  // Clear the comment input field
+	  commentInput.value = "";
+  alert("Your comment has been added successfully")
+	  // Refresh the comments section
+	}
+	renderBlog();
+  };
+  // Function to handle the like button click event
+   const likeBlog = async (blogId) => {
+    const res = await fetch(`https://weary-teal-shoe.cyclic.app/Blogs/${blogId}`);
+    const blog = await res.json();
+
+    blog.likes++; // increment the likes property of the blog object
+
+    // Update the blog object on the server using a PUT request
+    const putRes = await fetch(`https://weary-teal-shoe.cyclic.app/Blogs/${blogId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(blog)
+    });
+	renderBlog();
+};
 window.addEventListener("DOMContentLoaded", () => {
   renderBlog();
 });
