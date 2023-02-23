@@ -264,7 +264,7 @@
             </div>
           </div>
         </div>
-        <form id="contact-form">
+        <form id="contact-form" onsubmit="postQuerry(event)">
           <div class="iniputs">
             <div class="form-group">
               <label for="name">Name</label>
@@ -291,7 +291,7 @@
           </div>
           <textarea name="" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
           <div class="invalid-feedback">Please enter a message</div>
-          <button type="submit" onclick="postQuerry()" class="form__button2">Send</button>
+          <button type="submit" class="form__button2">Send</button>
         </form>
       </div>
 
@@ -346,7 +346,6 @@
     </div>
   </footer>
   <script src="./JavaScript/index.js"></script>
-  <script src="./JavaScript/querries.js"></script>
 </body>
 
 </html>

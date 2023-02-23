@@ -93,6 +93,7 @@ input[type="checkbox"]:checked ~ .nav-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  justify-content: space-between;
   align-items: center;
   position: absolute;
   top: 80px;
