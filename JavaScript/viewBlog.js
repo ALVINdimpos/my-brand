@@ -42,9 +42,9 @@ const renderBlog = async () => {
 					${comments.map(comment => `
 					  <li class="comment">
 						<div class="comment-header">
-						  <img src="../Images/mine.png" alt="User Avatar">
+						  <img src="../Images/user.png" alt="User Avatar">
 						  <div class="comment-meta">
-							<h3 class="comment-author">${comment.name}</h3>
+							<h3 class="comment-author">anonymous</h3>
 							<time class="comment-time">${currentDate}</time>
 						  </div>
 						  <div class="comment-actions">
