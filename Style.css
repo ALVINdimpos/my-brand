@@ -23,6 +23,10 @@ button {
   transition: 0.4s;
   width: 182px;
   height: 57px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1s;
+  transition: transform 0.3s ease;
 }
 button:hover {
   transform: scale(1.1);
@@ -86,7 +90,7 @@ span {
 .nav-link:hover {
   color: #47d8e1;
 }
-#menu-toggle{
+#menu-toggle {
   display: none;
 }
 input[type="checkbox"]:checked ~ .nav-list {
@@ -109,6 +113,9 @@ input[type="checkbox"]:checked ~ .nav-list {
 }
 /*navbar*/
 /*hero*/
+#ShowCase {
+  height: 100vh;
+}
 .hero {
   display: flex;
   justify-content: space-between;
@@ -117,20 +124,25 @@ input[type="checkbox"]:checked ~ .nav-list {
   display: flex;
   justify-content: space-between;
   width: 50%;
-  gap: 4rem;
+  height: 100%;
 }
 .hero__title {
   color: white;
   font-size: 50px;
   font-weight: bold;
   margin-bottom: 4rem;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
 }
 .hero__description {
   font-size: 20px;
   width: 80%;
   font-weight: lighter;
-  line-height: 30px;
+  line-height: 40px;
   margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.5s;
 }
 .my-photo {
   flex-basis: 40%;
@@ -142,6 +154,10 @@ input[type="checkbox"]:checked ~ .nav-list {
   height: auto;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideIn 0.5s ease forwards;
+  animation-delay: 1.5s;
 }
 
 .social_media {
@@ -150,12 +166,15 @@ input[type="checkbox"]:checked ~ .nav-list {
   gap: 1rem;
   margin-top: 1rem;
   width: 50%;
+  opacity: 0;
+  animation: slideIn 0.5s ease forwards;
+  animation-delay: 1.5s;
+  transform: translateX(-50px);
 }
 .social_media a {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
   gap: 1rem;
   color: white;
   text-decoration: none;
@@ -166,8 +185,42 @@ input[type="checkbox"]:checked ~ .nav-list {
 }
 .social_media i {
   color: #47d8e1;
+  font-size: 2rem;
+ margin-right: 0.5rem;
+}
+.social_media i:hover {
+  color: white;
+  transition: 0.5s;
+}
+.social_media p {
+  font-size: 1.2rem;
+  margin: 0;
+  }
+
+/* Define the animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 /*hero*/
+#Skills{
+  padding: 50px 0;
+}
 .skills-wraper {
   display: flex;
   justify-content: space-between;
@@ -214,15 +267,18 @@ input[type="checkbox"]:checked ~ .nav-list {
   gap: 1rem;
 }
 .skills_wraper p {
-  font-weight:lighter;
+  font-weight: lighter;
   font-size: 20px;
 }
 .skills_wraper i {
-  font-size:320px ;
+  font-size: 320px;
 }
 .skills {
   display: flex;
   justify-content: space-between;
+}
+#work{
+  padding: 50px 0;
 }
 .card-wraper {
   display: flex;
@@ -252,7 +308,7 @@ input[type="checkbox"]:checked ~ .nav-list {
 .tesmonilas {
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  padding: 50px 0;
 }
 .bland {
   display: flex;
@@ -378,9 +434,10 @@ form textarea {
 }
 
 /*css for blogs*/
-#Blogs{
+#Blogs {
   transform: translateY(50px);
   transition: opacity 0.5s, transform 0.5s;
+  padding: 50px 0;
 }
 #blog.in-view {
   opacity: 1;
@@ -392,8 +449,6 @@ form textarea {
   width: 90%;
   margin: auto;
   gap: 2rem;
-  
- 
 }
 .blog_card {
   display: flex;
@@ -451,85 +506,85 @@ form textarea {
   cursor: pointer;
 }
 .subscribe {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   backdrop-filter: blur(50px);
   background: radial-gradient(
     75.85% 168.08% at 25.62% 78.02%,
     rgba(237, 238, 248, 0.3) 0%,
     rgba(255, 255, 255, 0) 100%
   );
-	width: 90%;
-	height: 474px;
-	border-radius: 10px;
-	box-shadow: 0px 4px 4px rgba(2, 2, 2, 0.25);
+  width: 90%;
+  height: 474px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(2, 2, 2, 0.25);
   margin: 1rem auto;
 }
 
 .invalid-feedback {
-	display: none;
-	color: red;
-	margin-top: 5px;
+  display: none;
+  color: red;
+  margin-top: 5px;
 }
 .subscribe__title {
-	font-weight: bold;
-	font-size: 26px;
+  font-weight: bold;
+  font-size: 26px;
   color: white;
-	margin-bottom: 18px;
+  margin-bottom: 18px;
 }
 
 .subscribe__copy {
-	max-width: 450px;
-	text-align: center;
-	margin-bottom: 53px;
-	line-height: 1.5;
+  max-width: 450px;
+  text-align: center;
+  margin-bottom: 53px;
+  line-height: 1.5;
   color: white;
 }
 
 .form {
-	margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .form__email {
-	padding: 20px 25px;
-	border-radius: 5px;
- 	border: 1px solid #CAD3DB;
-	width: 431px;
-	font-size: 18px;
-	color: #0F121F;
+  padding: 20px 25px;
+  border-radius: 5px;
+  border: 1px solid #cad3db;
+  width: 431px;
+  font-size: 18px;
+  color: #0f121f;
 }
 
 .form__email:focus {
-	outline: 1px solid #3D9FFF;
+  outline: 1px solid #3d9fff;
 }
 
 .form__button {
   background: linear-gradient(#1e90ff 13.52%, #3c6071 155.19%);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-	padding: 10px;
-	border: none;
-	width: 244px;
-	height: 65px;
-	border-radius: 5px;
-	font-size: 18px;
-	color: white;
+  padding: 10px;
+  border: none;
+  width: 244px;
+  height: 65px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
 }
 .form__button2 {
   background: linear-gradient(#1e90ff 13.52%, #3c6071 155.19%);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-	padding: 10px;
-	border: none;
-	width: 100%;
-	height: 65px;
-	border-radius: 5px;
-	font-size: 18px;
-	color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  height: 65px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
   margin-top: 12px;
 }
 .notice {
-	width: 345px;
+  width: 345px;
 }
 
 footer {
@@ -555,7 +610,8 @@ footer a {
 .services {
   display: flex;
   flex-wrap: wrap;
-  width: 100%,
+  width: 100%;
+  padding: 50px 0;
 }
 
 .service-card {
@@ -638,22 +694,21 @@ p {
     display: none;
   }
   .skills_wraper i {
-    font-size:280px;
+    font-size: 280px;
   }
   .form__email {
     width: 80%;
-    margin-left:0.2rem;
-  
+    margin-left: 0.2rem;
   }
-  
-.notice {
-	width: 80%;
-}
-.form__button{
-  margin-top: 1rem;
-  width: 98%;
-  margin-left:0.2rem;
-}
+
+  .notice {
+    width: 80%;
+  }
+  .form__button {
+    margin-top: 1rem;
+    width: 98%;
+    margin-left: 0.2rem;
+  }
 }
 .circles {
   position: absolute;
@@ -672,7 +727,7 @@ p {
   left: 90%;
 }
 
-.social{
+.social {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -691,7 +746,6 @@ p {
     height: 300px;
   }
   .hero__description {
-    width: 100%;
     margin: auto;
     margin-left: 12px;
   }
@@ -740,7 +794,7 @@ p {
     margin-bottom: 2rem;
   }
   #work {
-    margin-top: 2rem;
+    padding: 50px 0;
   }
   .tesmonilas {
     flex-direction: column;
@@ -782,7 +836,7 @@ p {
     gap: 3rem;
     margin-bottom: 2rem;
   }
-  .skills{
+  .skills {
     gap: 1rem;
     margin-bottom: 2rem;
   }
@@ -790,7 +844,7 @@ p {
     width: 90%;
     margin: auto;
   }
-  .service-card{
+  .service-card {
     width: 90%;
     margin: 20px;
     padding: 30px;
@@ -870,4 +924,3 @@ p {
     text-align: center;
   }
 }
-
