@@ -1,9 +1,8 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans";
 }
 body {
   min-height: 100vh;
@@ -12,7 +11,7 @@ a {
   text-decoration: none;
   color: white;
 }
-a:hover{
+a:hover {
   color: black;
 }
 li {
@@ -25,7 +24,7 @@ h2 {
 h3 {
   color: #999;
 }
-.user i{
+.user i {
   color: #47d8e1;
 }
 .brand-name {
@@ -269,9 +268,8 @@ td {
     display: none;
   }
 }
-#myForm{
+#myForm {
   width: 450px;
-  min-height: 500px;
   height: auto;
   border-radius: 5px;
   margin: 2% auto;
@@ -280,18 +278,37 @@ td {
   background: #4f6e7d;
   display: none;
 }
+#edit-form {
+  width: 450px;
+  height: auto;
+  border-radius: 5px;
+  margin: 2% auto;
+  box-shadow: 0px 4px 4px rgba(2, 2, 2, 0.25);
+  padding: 2%;
+  background: #4f6e7d;
+}
+#edit-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 2rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
 /* form Container */
 form .con {
-  display: -webkit-flex;
   display: flex;
-
+  flex-direction: column;
   -webkit-justify-content: space-around;
   justify-content: space-around;
 
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 /* the header form form */
@@ -302,31 +319,34 @@ header {
 
 header h2 {
   font-size: 250%;
-  font-family: 'Playfair Display', serif;
+  font-family: "Open Sans";
   color: white;
 }
-header p {letter-spacing: 0.05em;}
+header p {
+  letter-spacing: 0.05em;
+}
 .input-item {
   background: #fff;
   color: #333;
   padding: 14.5px 0px 15px 9px;
   border-radius: 5px 0px 0px 5px;
 }
-input[class="form-input"]{
+input[class="form-input"] {
   width: 100%;
   height: 50px;
   margin-top: 2%;
   padding: 15px;
-  
+
   font-size: 16px;
   color: black;
 
   outline: none;
   border: none;
   transition: 0.2s linear;
-  
 }
-input[id="txt-input"] {width: 100%;}
+input[id="txt-input"] {
+  width: 100%;
+}
 input:focus {
   transform: translateX(-2px);
   border-radius: 5px;
@@ -345,7 +365,7 @@ input:focus {
   cursor: pointer;
   text-align: center;
   transition: all 0.2s linear;
-  
+
   margin: 7% auto;
   letter-spacing: 0.05em;
 }
@@ -356,11 +376,14 @@ input:focus {
 }
 
 /*       Forgot Password button FAF3DD  */
-.frgt-pass {background: transparent;}
+.frgt-pass {
+  background: transparent;
+}
 
 /*     Sign Up button  */
-.sign-up {background: #B8F2E6;}
-
+.sign-up {
+  background: #b8f2e6;
+}
 
 /* buttons hover */
 button:hover {
@@ -374,9 +397,9 @@ button:hover {
 }
 @keyframes ani9 {
   0% {
-      transform: translateY(3px);
+    transform: translateY(3px);
   }
   100% {
-      transform: translateY(5px);
+    transform: translateY(5px);
   }
 }

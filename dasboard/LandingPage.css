@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans";
 }
 body {
   min-height: 100vh;
@@ -303,3 +303,37 @@ td {
     display: none;
   }
 }
+#myChart {
+  background: radial-gradient(
+    75.85% 168.08% at 25.62% 78.02%,
+    rgba(237, 238, 248, 0.3) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  padding: 1rem;
+  border-radius: 10px;
+  height: 300px;
+  width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: chartFadeIn 1s ease-in-out;
+}
+#myChartContainer{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 95%;
+height: 300px;
+margin-bottom: 2rem;
+
+}
+
+@keyframes chartFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
