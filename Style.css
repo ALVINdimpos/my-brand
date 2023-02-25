@@ -6,10 +6,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 body {
   margin-left: 5%;
   margin-right: 5%;
+  overflow-x: hidden;
 }
 button {
   border: none;
@@ -74,6 +76,7 @@ span {
   list-style: none;
   margin: 0;
   padding: 0;
+  z-index: 999;
 }
 
 .nav-item {
@@ -101,21 +104,21 @@ input[type="checkbox"]:checked ~ .nav-list {
   align-items: center;
   position: absolute;
   top: 80px;
-  right: 10px;
+  right: 0;
+  left: 0;
   background: radial-gradient(
     75.85% 168.08% at 25.62% 78.02%,
-    rgba(237, 238, 248, 0.3) 0%,
+    rgba(29, 29, 30, 0.3) 0%,
     rgba(255, 255, 255, 0) 100%
   );
   width: 100%;
+  max-width: 100%;
   padding: 1rem 0;
   box-shadow: 0px 0px 10px #333;
 }
 /*navbar*/
 /*hero*/
-#ShowCase {
-  height: 100vh;
-}
+
 .hero {
   display: flex;
   justify-content: space-between;
@@ -748,11 +751,12 @@ p {
   .hero__description {
     margin: auto;
     margin-left: 12px;
+    width: 90%;
   }
-  .hero__description {
-    margin-right: 12px;
+  
+  .social_media{
+    width: 100%;
   }
-
   .social_media a:nth-child(4) {
     display: none;
   }
@@ -816,20 +820,16 @@ p {
     font-size: 16px;
   }
   .contact_form {
-    flex-direction: column;
-    gap: 3rem;
-    width: 90%;
-    margin: auto;
-  }
-  .contact_form {
     flex-direction: column-reverse;
-    gap: 3rem;
-    width: 90%;
-    margin: auto;
+    width: 100%;
   }
   .contact_info1 {
-    width: 90%;
+    width: 100%;
     margin: auto;
+  }
+  .iniputs{
+    width: 95%;
+
   }
   .blog_card {
     flex-direction: column;
@@ -850,8 +850,7 @@ p {
     padding: 30px;
   }
   form textarea {
-    height: 100px;
-    width: 100%;
+    width: 95%;
   }
   footer {
     flex-direction: column;
@@ -922,5 +921,17 @@ p {
   .text {
     flex-basis: 100%;
     text-align: center;
+  }
+  .about-me{
+    padding: 1px;
+  }
+  .about-me h1 {
+    margin-top: 1rem;
+  }
+  .subscribe{
+    width: 100%;
+  }
+  .form__button2{
+    width: 100%;
   }
 }

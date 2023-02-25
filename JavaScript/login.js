@@ -13,7 +13,6 @@ loginForm.addEventListener('submit', async (event) => {
     // fetch the list of users from the API endpoint
     const response = await fetch('https://weary-teal-shoe.cyclic.app/users');
     const users = await response.json();
-console.log(users)
     // find the user with the matching email and password
     const user = users.find((user) => user.email === email && user.password === password);
 
