@@ -19,7 +19,7 @@ loginForm.addEventListener('submit', async (event) => {
     if (!user) {
       // if the user is not found, show an error message
       alert('Invalid email or password');
-      loginForm.innerHTML = 'Sign in';
+      location.reload();
       return;
     }
 
@@ -31,7 +31,6 @@ loginForm.addEventListener('submit', async (event) => {
   } catch (error) {
     console.error(error);
     alert('An error occurred during login');
-    window.location.href = './Login.html';
   }
 });
 
