@@ -6,12 +6,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 body {
   margin-left: 5%;
   margin-right: 5%;
-  overflow-x: hidden;
 }
 button {
   border: none;
@@ -34,7 +32,6 @@ button:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
-
 span {
   color: #47d8e1;
 }
