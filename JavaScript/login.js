@@ -31,6 +31,7 @@ loginForm.addEventListener('submit', async (event) => {
   } catch (error) {
     console.error(error);
     alert('An error occurred during login');
+    window.location.href = './Login.html';
   }
 });
 
