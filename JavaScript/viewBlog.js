@@ -10,7 +10,6 @@ const currentDate = `${day}/${month}/${year}`;
 const renderBlog = async () => {
 	const res = await fetch(`https://weary-teal-shoe.cyclic.app/Blogs/${id}`);
 	const blog = await res.json();
-	
 	// Fetch comments for the corresponding blog post ID
 	const commentsRes = await fetch(`https://weary-teal-shoe.cyclic.app/comments?blogId=${id}`);
 	const comments = await commentsRes.json();
