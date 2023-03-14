@@ -1,57 +1,78 @@
 // Get the modal
-const toggleForm = ()=>{
+const togglePostForm = () => {
   var x = document.getElementById("myForm");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
     x.style.display = "none";
   }
-}
+};
+const toggleEditForm = () => {
+  var x = document.getElementById("edit-form-container");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+};
+const URL = "https://long-ruby-bunny-yoke.cyclic.app/api";
 // post blog by using form after reload and clear form and give feed back if successfull added
 const postBlog = async () => {
   const postBlogForm = document.getElementById("myForm");
-  const title=postBlogForm.elements.Title.value ;
-  const author=postBlogForm.elements.Author.value ;
-  const date=postBlogForm.elements.Date.value ;
-  const body=postBlogForm.elements.Body.value ;
-  const image=postBlogForm.elements.URLim.value ;
-  const response = await fetch("https://weary-teal-shoe.cyclic.app/Blogs", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      author,
-      title,
-      body,
-      date,
-      image
-    }),
-  });
-  postBlogForm.reset();
-  alert("Your blog has been added successfully")
-  renderBlogs();
+  const title = postBlogForm.elements.Title.value;
+  const author = postBlogForm.elements.Author.value;
+  const content = postBlogForm.elements.Body.value;
+  const image = postBlogForm.elements.URLim.value;
+
+  try {
+    const response = await fetch(`${URL}/blog/create`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        author,
+        title,
+        content,
+        image,
+      }),
+    });
+
+    if (response.ok) {
+      postBlogForm.reset();
+      alert("Your blog has been added successfully");
+      renderBlogs();
+    } else {
+      const error = await response.json();
+      alert(`Failed to add blog: ${error.message}`);
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Failed to add blog. Please try again later.");
+  }
 };
+
 // render blogs
 const renderBlogs = async (searchText) => {
-  let url="https://weary-teal-shoe.cyclic.app/Blogs";
-  if(searchText){
+  let url = `${URL}/blogs`;
+  if (searchText) {
     url += `?q=${searchText}`;
   }
   const response = await fetch(url);
   const Blogs = await response.json();
+  console.log(Blogs);
   const BlogsContainer = document.querySelector("#Blogs");
   let template = "";
   Blogs.forEach((blogs) => {
     template += `
       <tr>  
         <td>${blogs.title.slice(0, 10)}</td>
-        <td>${blogs.body.slice(0, 10)}</td>
-        <td>${blogs.date}</td>
+        <td>${blogs.content.slice(0, 10)}</td>
+        <td>${blogs.createdAt}</td>
         <td>
             <i class="fa fa-eye" aria-hidden="true"> </i>
-            <i class="fa fa-pencil" aria-hidden="true" onclick="editBlog(${blogs.id})"></i>
-            <i class="fa fa-trash-o" aria-hidden="true" onclick="deleteBlog(${blogs.id})"></i>
+            <i class="fa fa-pencil" aria-hidden="true" onclick="editBlog('${blogs._id.toString()}')"></i>
+            <i class="fa fa-trash-o" aria-hidden="true" onclick="deleteBlog('${blogs._id.toString()}')"></i>
         </td>
       </tr>
     `;
@@ -60,78 +81,72 @@ const renderBlogs = async (searchText) => {
 };
 // search blog
 const search = () => {
-  const searchForm = document.querySelector('.search');
+  const searchForm = document.querySelector(".search");
   const searchText = searchForm.elements.text.value;
   renderBlogs(searchText);
-}
-const searchForm = document.querySelector('.search');
-searchForm.addEventListener('submit', (event) => {
+};
+const searchForm = document.querySelector(".search");
+searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
   search();
 });
 
 // delete blog
 const deleteBlog = async (id) => {
-    const response = await fetch(`https://weary-teal-shoe.cyclic.app/Blogs/${id}`, {
-        method: "DELETE",
-    });
-    renderBlogs();
-};
-// Edit a blog
-let currentBlogId;
-async function editBlog(id) {
-  currentBlogId = id;
-  var x = document.getElementById("edit-form-container");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-  // Get the blog from the API
-  const response = await fetch(`https://weary-teal-shoe.cyclic.app/Blogs/${id}`);
-  const blog = await response.json();
-  // Update the blog form with the blog data
-  const blogForm = document.getElementById("edit-form");
-  blogForm.elements.Title.value = blog.title;
-  blogForm.elements.Author.value = blog.author;
-  blogForm.elements.Date.value = blog.date;
-  blogForm.elements.Body.value = blog.body;
-  blogForm.elements.URLim.value = blog.image;
-  // Change the form action to update the blog
-  currentBlogId = id;
-  blogForm.action = `https://weary-teal-shoe.cyclic.app/Blogs/${id}`;
-  const updateButton = document.getElementById("update-button");
-  updateButton.addEventListener("click", () => updateBlog(id));
-}
-
-// Submit the edited blog
-const updateBlog = async () => {
-  console.log('currentBlogId:', currentBlogId);
-  const blogForm = document.getElementById("edit-form");
-  const title = blogForm.elements.Title.value;
-  const author = blogForm.elements.Author.value;
-  const date = blogForm.elements.Date.value;
-  const body = blogForm.elements.Body.value;
-  const image = blogForm.elements.URLim.value;
-  const response = await fetch(`https://weary-teal-shoe.cyclic.app/Blogs/${currentBlogId}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      title,
-      author,
-      date,
-      body,
-      image
-    }),
+  const response = await fetch(`${URL}/blog/delete/${id}`, {
+    method: "DELETE",
   });
-  blogForm.reset(); 
   renderBlogs();
 };
-renderBlogs();
+ // edit blog
+const editBlog = async (id) => {
+  toggleEditForm();
+  const response = await fetch(`${URL}/blog/${id}`);
+  const blog = await response.json();
+
+  const editForm = document.getElementById("edit-form");
+  editForm.elements.Title.value = blog.title;
+  editForm.elements.Author.value = blog.author;
+  editForm.elements.Body.value = blog.content;
+  editForm.elements.URLim.value = blog.image;
+  editForm.elements.id.value = blog._id; // add this line to set the blog ID
+};
+// update blog
+const updateBlog = async () => {
+  const editForm = document.getElementById("edit-form");
+  const title = editForm.elements.Title.value;
+  const author = editForm.elements.Author.value;
+  const content = editForm.elements.Body.value;
+  const image = editForm.elements.URLim.value;
+  const id = editForm.elements.id.value;
+
+  try {
+    const response = await fetch(`${URL}/blog/update/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        author,
+        title,
+        content,
+        image,
+      }),
+    });
+
+    if (response.ok) {
+      editForm.reset();
+      alert("Your blog has been updated successfully");
+      renderBlogs();
+      toggleEditForm();
+    } else {
+      const error = await response.json();
+      alert(`Failed to update blog: ${error.message}`);
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Failed to update blog. Please try again later.");
+  }
+};
+
 window.addEventListener("DOMContentLoaded", () => renderBlogs());
-
-
-
-

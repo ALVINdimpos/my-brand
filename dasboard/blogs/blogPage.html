@@ -74,11 +74,7 @@
         
                             <br>
         
-                            <input class="form-input" id="Date" type="text" placeholder="Date" required>
-        
-                            <br>
-        
-                            <input class="form-input" type="URL" id="URLim" placeholder="image URL">
+                            <input class="form-input" type="text" id="URLim" placeholder="image URL">
                             <br>
                             <button class="log_in" onclick="postBlog()" type="button">Add </button>
                         </div>
@@ -124,14 +120,11 @@
                         <input class="form-input" id="Body" type="text" placeholder="Body" required>
     
                         <br>
-    
-                        <input class="form-input" id="Date" type="text" placeholder="Date" required>
-    
+                        <input class="form-input" type="text" id="URLim" placeholder="image URL">
                         <br>
-    
-                        <input class="form-input" type="URL" id="URLim" placeholder="image URL">
-                        <br>
-                        <button class="log_in"  type="submit" id="update-button">Add </button>
+                        <input type="hidden" name="id">
+
+                        <button class="log_in"  type="submit" id="update-button" onclick="updateBlog()">Save changes </button>
                     </div>
     
             </form>
