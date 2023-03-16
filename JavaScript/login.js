@@ -49,7 +49,7 @@ async function handleLogin(event) {
     };
 
     // redirect user to dashboard
-    window.location.href = "./Pages/dashboard.html";
+    window.location.href = "../dashboard/landingPage.html";
   } catch (error) {
     // Display an error message to the user and reset the form and loader
     console.error(error);
