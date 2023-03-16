@@ -1,7 +1,7 @@
 const URL = "https://long-ruby-bunny-yoke.cyclic.app/api";
 
 const renderBlogs =async()=>{
-  const response = await fetch(`${URL}/blogs?_sort=date&_order=desc&_limit=3`);
+  const response = await fetch(`${URL}/blogs?_sort=createdAt&_order=desc&_limit=3`);
   const Blogs = await response.json();
   const BlogsContainer = document.querySelector('#blog_card');
   let template = '';

@@ -15,11 +15,14 @@ async function handleLogin(event) {
   const email = document.querySelector("#email").value;
   const password = document.querySelector("#password").value;
 
+  // Hash the password on the client-side using SHA256
+  
+
   // Display a loading message to the user
   loader.innerText = "Loading ...";
 
   try {
-    // Send a POST request to the API endpoint with the email and password
+    // Send a POST request to the API endpoint with the email and hashed password
     const response = await fetch(`${API_URL}/login`, {
       method: "POST",
       headers: {
@@ -33,20 +36,20 @@ async function handleLogin(event) {
       throw new Error("An error occurred during login");
     }
 
-    // Get the token from the response
-    const { token } = await response.json();
+    // Get the access token from the response
+    const { accessToken } = await response.json();
 
-    // Store the token in local storage
-    localStorage.setItem("token", token);
+    // Store the access token in local storage
+    localStorage.setItem("accessToken", accessToken);
 
-    // Add the Authorization header to the API calls using the token
+    // Add the Authorization header to the API calls using the access token
     const headers = {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${accessToken}`,
     };
 
-    // Redirect the user to the dashboard page
-    window.location.href = "../dashboard/landingPage.html";
+    // redirect user to dashboard
+    window.location.href = "./Pages/dashboard.html";
   } catch (error) {
     // Display an error message to the user and reset the form and loader
     console.error(error);
