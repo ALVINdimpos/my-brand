@@ -1,5 +1,7 @@
+const URL = "https://long-ruby-bunny-yoke.cyclic.app/api";
+
 const renderBlogs =async()=>{
-    const response = await fetch(' https://weary-teal-shoe.cyclic.app/Blogs');
+    const response = await fetch(`${URL}/blogs`);
     const Blogs = await response.json();
     const BlogsContainer = document.querySelector('#recentBlogs');
     let template = '';
@@ -7,8 +9,8 @@ const renderBlogs =async()=>{
       template += `
       <tr>  
         <td>${blogs.title.slice(0,10)}</td>
-        <td>${blogs.body.slice(0,10)}</td>
-        <td>${blogs.date}</td>
+        <td>${blogs.content.slice(0,10)}</td>
+        <td>${blogs.createdAt}</td>
         <td><a href="#" class="btn">View</a></td>
       </tr>
     `

@@ -18,6 +18,7 @@ const toggleEditForm = () => {
 const URL = "https://long-ruby-bunny-yoke.cyclic.app/api";
 // post blog by using form after reload and clear form and give feed back if successfull added
 const postBlog = async () => {
+     togglePostForm();
   const postBlogForm = document.getElementById("myForm");
   const title = postBlogForm.elements.Title.value;
   const author = postBlogForm.elements.Author.value;

@@ -1,36 +1,57 @@
-// select the login form
-const loginForm = document.querySelector('#login-form');
-const loader = document.querySelector('#loader');
-// add a submit event listener to the form
-loginForm.addEventListener('submit', async (event) => {
+// Define the API endpoint URL
+const API_URL = "https://long-ruby-bunny-yoke.cyclic.app/api";
+
+// Define the login form element and loader element
+const loginForm = document.querySelector("#login-form");
+const loader = document.querySelector("#loader");
+
+// Add a submit event listener to the form
+loginForm.addEventListener("submit", handleLogin);
+
+async function handleLogin(event) {
   event.preventDefault();
 
-  // get the email and password values from the form inputs
-  const email = document.querySelector('#email').value;
-  const password = document.querySelector('#password').value;
-  loader.innerText = 'Loading ...';
-  try {
-    // fetch the list of users from the API endpoint
-    const response = await fetch('https://weary-teal-shoe.cyclic.app/users');
-    const users = await response.json();
-    // find the user with the matching email and password
-    const user = users.find((user) => user.email === email && user.password === password);
+  // Get the email and password values from the form
+  const email = document.querySelector("#email").value;
+  const password = document.querySelector("#password").value;
 
-    if (!user) {
-      // if the user is not found, show an error message
-      alert('Invalid email or password');
-      location.reload();
-      return;
+  // Display a loading message to the user
+  loader.innerText = "Loading ...";
+
+  try {
+    // Send a POST request to the API endpoint with the email and password
+    const response = await fetch(`${API_URL}/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    // Check if the request was successful
+    if (!response.ok) {
+      throw new Error("An error occurred during login");
     }
 
-    // if the user is found, store their information in local storage
-    localStorage.setItem('currentUser', JSON.stringify(user));
+    // Get the token from the response
+    const { token } = await response.json();
 
-    // redirect the user to the dashboard page
-    window.location.href = '../dasboard/landingPage.html';
+    // Store the token in local storage
+    localStorage.setItem("token", token);
+
+    // Add the Authorization header to the API calls using the token
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    };
+
+    // Redirect the user to the dashboard page
+    window.location.href = "../dashboard/landingPage.html";
   } catch (error) {
+    // Display an error message to the user and reset the form and loader
     console.error(error);
-    alert('An error occurred during login');
+    alert(error.message);
+    loginForm.reset();
+    loader.innerText = "Sign in";
   }
-});
-
+}
