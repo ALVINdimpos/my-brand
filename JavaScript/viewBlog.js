@@ -1,3 +1,4 @@
+const URL = "https://long-ruby-bunny-yoke.cyclic.app/api";
 const id = new URLSearchParams(window.location.search).get("id");
 const blogTitle = document.querySelector("#blogContainer");
 // current date
@@ -8,23 +9,22 @@ const year = date.getFullYear();
 const currentDate = `${day}/${month}/${year}`;
 
 const renderBlog = async () => {
-	const res = await fetch(`https://weary-teal-shoe.cyclic.app/Blogs/${id}`);
-	const blog = await res.json();
-	// Fetch comments for the corresponding blog post ID
-	const commentsRes = await fetch(`https://weary-teal-shoe.cyclic.app/comments?blogId=${id}`);
-	const comments = await commentsRes.json();
-	
-	let template = "";
-	template += `
+  const res = await fetch(`${URL}/blog/${id}`);
+  const blog = await res.json();
+  // Fetch comments for the corresponding blog post ID
+  const commentsRes = await fetch(`${URL}/blog/${id}/comments`);
+  const comments = await commentsRes.json();
+  let template = "";
+  template += `
 		  <header>
 		  <h1>My Blog</h1>
-		  <p>By ${blog.author} | ${blog.date}</p>
+		  <p>By ${blog.author} | ${blog.createdAt}</p>
 	  </header>
 	  <main>
 		  <article>
 			  <h2>${blog.title}</h2>
 			  <img src="${blog.image}" alt="Blog Image">
-			  <p>${blog.body}</p>
+			  <p>${blog.content}</p>
 			  <div class="like">
 				  <button id="like-btn">Like</button>
 				  <p id="like-count">${blog.likes} likes</p>
@@ -34,11 +34,13 @@ const renderBlog = async () => {
 				  <form>
 					  <label for="comment">Comment:</label>
 					  <textarea id="comment" name="comment" required></textarea>
-					  <button type="submit" onclick="postComment(${blog.id}, event)">Post</button>
+					  <button type="submit" onclick="postComment(${blog._id})">Post</button>
 				  </form>
 				  <article>
 				  <ul class="comments">
-					${comments.map(comment => `
+					${comments
+            .map(
+              (comment) => `
 					  <li class="comment">
 						<div class="comment-header">
 						  <img src="../Images/user.png" alt="User Avatar">
@@ -51,9 +53,11 @@ const renderBlog = async () => {
 							<button class="reply-button">Reply</button>
 						  </div>
 						</div>
-						<p class="comment-text">${comment.comment}</p>
+						<p class="comment-text">${comment.commentBody}</p>
 					  </li>
-					`).join('')}
+					`
+            )
+            .join("")}
 				  </ul>
 				</article>
 				  
@@ -62,46 +66,28 @@ const renderBlog = async () => {
 		  </article>
 	  </main>
 	  `;
-	blogTitle.innerHTML = template;
-  };
-  
+  blogTitle.innerHTML = template;
+};
+
 // post comment
-const postComment = async (id, event) => {
-	event.preventDefault();
-	
-	const commentInput = document.querySelector("#comment");
-	const comment = commentInput.value.trim();
-	
-	if (comment !== "") {
-	  const res = await fetch("https://weary-teal-shoe.cyclic.app/comments", {
-		method: "POST",
-		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify({ blogId: id, comment }),
-	  });
-  
-	  // Clear the comment input field
-	  commentInput.value = "";
-  alert("Your comment has been added successfully")
-	  // Refresh the comments section
-	}
-	renderBlog();
-  };
-  // Function to handle the like button click event
-   const likeBlog = async (blogId) => {
-    const res = await fetch(`https://weary-teal-shoe.cyclic.app/Blogs/${blogId}`);
-    const blog = await res.json();
+const postComment = async (id) => {
+  const commentInput = document.querySelector("#comment");
+  const commentBody = commentInput.value.trim();
 
-    blog.likes++; // increment the likes property of the blog object
-
-    // Update the blog object on the server using a PUT request
-    const putRes = await fetch(`https://weary-teal-shoe.cyclic.app/Blogs/${blogId}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(blog)
+  if (comment !== "") {
+    const res = await fetch(`${URL}/blog/create/${id}/comments`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ commentBody }),
     });
-	renderBlog();
+
+    // Clear the comment input field
+    commentInput.value = "";
+    alert("Your comment has been added successfully");
+    // Refresh the comments section
+    renderBlog();
+  }
+  renderBlog();
 };
 window.addEventListener("DOMContentLoaded", () => {
   renderBlog();
