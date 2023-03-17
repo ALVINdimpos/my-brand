@@ -1004,16 +1004,12 @@ p {
   margin-top: 50px;
 }
 
-.projects h2 {
-  font-size: 36px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.project-container {
+.project_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .project-card {
@@ -1047,12 +1043,6 @@ p {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-
-
-.project-card:hover .project-img img {
-  transform: scale(1.2);
-}
-
 .project-info {
   padding: 20px;
 }
@@ -1070,7 +1060,7 @@ p {
 
 .btn {
   display: inline-block;
-  background-color: #222;
+  background: linear-gradient(#1e90ff 13.52%, #3c6071 155.19%);
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
@@ -1082,5 +1072,15 @@ p {
   background-color: #fff;
   color: #222;
   box-shadow: 0px 4px
+
+}
+@media screen and (max-width: 768px) {
+  .project_container {
+    width: 90%;
+  }
+  .project-card {
+    width: 100%;
+  }
+
 
 }
