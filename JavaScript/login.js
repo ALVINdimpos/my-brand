@@ -8,6 +8,7 @@ const loader = document.querySelector("#loader");
 // Add a submit event listener to the form
 loginForm.addEventListener("submit", handleLogin);
 
+// Define the handleLogin function
 async function handleLogin(event) {
   event.preventDefault();
 
@@ -16,7 +17,6 @@ async function handleLogin(event) {
   const password = document.querySelector("#password").value;
 
   // Hash the password on the client-side using SHA256
-  
 
   // Display a loading message to the user
   loader.innerText = "Loading ...";
@@ -53,7 +53,15 @@ async function handleLogin(event) {
   } catch (error) {
     // Display an error message to the user and reset the form and loader
     console.error(error);
-    alert(error.message);
+    Toastify({
+      text: error.message,
+      duration: 3000,
+      close: true,
+      gravity: "bottom",
+      position: "right",
+      backgroundColor: "red",
+      stopOnFocus: true,
+    }).showToast();
     loginForm.reset();
     loader.innerText = "Sign in";
   }

@@ -23,28 +23,55 @@ const renderBlogs = async () => {
 }
 
 // post querry
-const postQuerry = async ( event) => {
+const postQuerry = async (event) => {
   event.preventDefault();
   const name = document.querySelector("#name").value;
   const email = document.querySelector("#email").value;
   const message = document.querySelector("#message").value;
-  const response = await fetch(`${URL}/querry/create`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      name,
-      email,
-      message,
-    }),
-  });
-  document.querySelector("#name").value="";
-  document.querySelector("#email").value="";
-  document.querySelector("#subject").value="";
-  document.querySelector("#budget").value="";
-  document.querySelector("#message").value="";
-  alert("Your querry has been added successfully")
+
+  try {
+    const response = await fetch(`${URL}/querry/create`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("An error occurred while submitting your query");
+    }
+
+    document.querySelector("#name").value = "";
+    document.querySelector("#email").value = "";
+    document.querySelector("#subject").value = "";
+    document.querySelector("#budget").value = "";
+    document.querySelector("#message").value = "";
+
+    // Display a success message using toastify
+    Toastify({
+      text: "Your query has been submitted successfully",
+      duration: 3000,
+      gravity: "bottom",
+      position: "left",
+      backgroundColor: "green",
+      stopOnFocus: true,
+    }).showToast();
+  } catch (error) {
+    // Display an error message using toastify
+    Toastify({
+      text: error.message,
+      duration: 3000,
+      gravity: "bottom",
+      position: "left",
+      backgroundColor: "red",
+      stopOnFocus: true,
+    }).showToast();
+  }
 };
 
 window.addEventListener('DOMContentLoaded', ()=>renderBlogs());

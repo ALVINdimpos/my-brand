@@ -18,7 +18,7 @@ const toggleEditForm = () => {
 const URL = "https://long-ruby-bunny-yoke.cyclic.app/api";
 // post blog by using form after reload and clear form and give feed back if successfull added
 const postBlog = async () => {
-     togglePostForm();
+  togglePostForm();
   const postBlogForm = document.getElementById("myForm");
   const title = postBlogForm.elements.Title.value;
   const author = postBlogForm.elements.Author.value;
@@ -41,15 +41,42 @@ const postBlog = async () => {
 
     if (response.ok) {
       postBlogForm.reset();
-      alert("Your blog has been added successfully");
+      Toastify({
+        text: "Your blog has been added successfully",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "green",
+        stopOnFocus: true,
+      }).showToast();
       renderBlogs();
     } else {
       const error = await response.json();
-      alert(`Failed to add blog: ${error.message}`);
+      Toastify({
+        text: `Failed to add blog: ${error.message}`,
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "red",
+        stopOnFocus: true,
+      }).showToast();
     }
   } catch (error) {
     console.error(error);
-    alert("Failed to add blog. Please try again later.");
+    Toastify({
+      text: "Failed to add blog. Please try again later.",
+      duration: 3000,
+      newWindow: true,
+      close: true,
+      gravity: "top",
+      position: "right",
+      backgroundColor: "red",
+      stopOnFocus: true,
+    }).showToast();
   }
 };
 
@@ -94,11 +121,27 @@ searchForm.addEventListener("submit", (event) => {
 
 // delete blog
 const deleteBlog = async (id) => {
-  const response = await fetch(`${URL}/blog/delete/${id}`, {
-    method: "DELETE",
-  });
-  renderBlogs();
+  try {
+    const response = await fetch(`${URL}/blog/delete/${id}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      renderBlogs();
+      Toastify({
+        text: "Blog deleted successfully!",
+        backgroundColor: "green",
+      }).showToast();
+    } else {
+      throw new Error("Failed to delete blog.");
+    }
+  } catch (error) {
+    Toastify({
+      text: error.message,
+      backgroundColor: "red",
+    }).showToast();
+  }
 };
+
  // edit blog
 const editBlog = async (id) => {
   toggleEditForm();
@@ -137,16 +180,28 @@ const updateBlog = async () => {
 
     if (response.ok) {
       editForm.reset();
-      alert("Your blog has been updated successfully");
       renderBlogs();
       toggleEditForm();
+      Toastify({
+        text: "Your blog has been updated successfully",
+        backgroundColor: "green",
+        className: "toastify-success",
+      }).showToast();
     } else {
       const error = await response.json();
-      alert(`Failed to update blog: ${error.message}`);
+      Toastify({
+        text: `Failed to update blog: ${error.message}`,
+        backgroundColor: "red",
+        className: "toastify-error",
+      }).showToast();
     }
   } catch (error) {
     console.error(error);
-    alert("Failed to update blog. Please try again later.");
+    Toastify({
+      text: "Failed to update blog. Please try again later.",
+      backgroundColor: "red",
+      className: "toastify-error",
+    }).showToast();
   }
 };
 

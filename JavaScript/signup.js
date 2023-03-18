@@ -11,7 +11,11 @@ form.addEventListener('submit', async (e) => {
 
   // Check if the password and confirm password fields match
   if (password !== confirmpassword) {
-    alert('Passwords do not match');
+    Toastify({
+      text: "Passwords do not match",
+      backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
+      position: "center",
+    }).showToast();
     return;
   }
 
@@ -33,10 +37,18 @@ form.addEventListener('submit', async (e) => {
 
     // Display success message to user and redirect to login page
     form.reset();
-    alert("Account created successfully! Please login with your credentials.");
+    Toastify({
+      text: "Account created successfully! Please login with your credentials.",
+      backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+      position: "center",
+    }).showToast();
     window.location.href = '../pages/login.html';
   } catch (error) {
-    alert(`An error occurred: ${error.message}`);
+    Toastify({
+      text: `An error occurred: ${error.message}`,
+      backgroundColor: "linear-gradient(to right, #f85032, #e73827)",
+      position: "center",
+    }).showToast();
   } finally {
     loader.innerText = "Sign up";
   }
