@@ -34,7 +34,7 @@ const renderBlog = async () => {
 				  <form>
 					  <label for="comment">Comment:</label>
 					  <textarea id="comment" name="comment" required></textarea>
-					  <button type="submit" onclick="postComment('${blog._id}')">Post</button>
+					  <button type="button" onclick="postComment('${blog._id}')">Post</button>
 				  </form>
 				  <article>
 				  <ul class="comments">
@@ -82,7 +82,7 @@ const postComment = async (id) => {
   });
   if (response.ok) {
     alert("Comment posted!");
-	window.location.reload();
+   renderBlog();
   } else {
     alert("Failed to post comment");
   }
@@ -91,3 +91,4 @@ const postComment = async (id) => {
 window.addEventListener("DOMContentLoaded", () => {
   renderBlog();
 });
+ 
