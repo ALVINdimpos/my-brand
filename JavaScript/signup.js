@@ -44,6 +44,7 @@ form.addEventListener("submit", async (e) => {
       text: "Account created successfully! Please login with your credentials.",
       backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
       position: "center",
+      duration: 5000,
     }).showToast();
     window.location.href = "../pages/Login.html";
   } catch (error) {
@@ -51,6 +52,7 @@ form.addEventListener("submit", async (e) => {
       text: `An error occurred: ${error.message}`,
       backgroundColor: "linear-gradient(to right, #f85032, #e73827)",
       position: "center",
+      duration: 5000,
     }).showToast();
   } finally {
     loader.innerText = "Sign up";
