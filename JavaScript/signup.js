@@ -45,7 +45,7 @@ form.addEventListener("submit", async (e) => {
       backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
       position: "center",
     }).showToast();
-    window.location.href = "./pages/Login.html";
+    window.location.href = "../Pages/Login.html";
   } catch (error) {
     Toastify({
       text: `An error occurred: ${error.message}`,
