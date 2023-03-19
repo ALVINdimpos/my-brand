@@ -34,16 +34,22 @@ form.addEventListener("submit", async (e) => {
 
     // Check if the request was successful
     if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.message);
+      // Display an error message to the user
+      const { message } = await response.json();
+      Toastify({
+        text: `An error occurred: ${message}`,
+        backgroundColor: "linear-gradient(to right, #f85032, #e73827)",
+        position: "center",
+      }).showToast();
+      return;
     }
-
     // Display success message to user and redirect to login page
     form.reset();
     Toastify({
       text: "Account created successfully! Please login with your credentials.",
       backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
       position: "center",
+      className: "toastify-success",
     }).showToast();
     window.location.href = "../Pages/Login.html";
   } catch (error) {
@@ -51,6 +57,7 @@ form.addEventListener("submit", async (e) => {
       text: `An error occurred: ${error.message}`,
       backgroundColor: "linear-gradient(to right, #f85032, #e73827)",
       position: "center",
+      className: "toastify-error",
     }).showToast();
   } finally {
     loader.innerText = "Sign up";

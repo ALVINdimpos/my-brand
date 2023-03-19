@@ -32,8 +32,13 @@ async function handleLogin(event) {
     });
 
     // Check if the request was successful
-    if (!response.ok) {
-      throw new Error("An error occurred during login");
+    if (response.ok) {
+      // Display a success message using toastify
+      Toastify({
+        text: "Login successful",
+        backgroundColor: "green",
+        className: "toastify-success",
+      }).showToast();
     }
 
     // Get the access token from the response
@@ -55,12 +60,8 @@ async function handleLogin(event) {
     console.error(error);
     Toastify({
       text: error.message,
-      duration: 3000,
-      close: true,
-      gravity: "bottom",
-      position: "right",
       backgroundColor: "red",
-      stopOnFocus: true,
+      className: "toastify-error",
     }).showToast();
     loginForm.reset();
     loader.innerText = "Sign in";

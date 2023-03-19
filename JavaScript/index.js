@@ -57,21 +57,15 @@ const postQuerry = async (event) => {
     // Display a success message using toastify
     Toastify({
       text: "Your query has been submitted successfully",
-      duration: 3000,
-      gravity: "bottom",
-      position: "left",
       backgroundColor: "green",
-      stopOnFocus: true,
+      className: "toastify-success",
     }).showToast();
   } catch (error) {
     // Display an error message using toastify
     Toastify({
       text: error.message,
-      duration: 3000,
-      gravity: "bottom",
-      position: "left",
       backgroundColor: "red",
-      stopOnFocus: true,
+      className: "toastify-error",
     }).showToast();
   }
 };

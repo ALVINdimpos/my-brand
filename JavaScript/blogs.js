@@ -43,39 +43,22 @@ const postBlog = async () => {
       postBlogForm.reset();
       Toastify({
         text: "Your blog has been added successfully",
-        duration: 3000,
-        newWindow: true,
-        close: true,
-        gravity: "top",
-        position: "right",
         backgroundColor: "green",
-        stopOnFocus: true,
+        className: "toastify-success",
       }).showToast();
       renderBlogs();
     } else {
       const error = await response.json();
       Toastify({
         text: `Failed to add blog: ${error.message}`,
-        duration: 3000,
-        newWindow: true,
-        close: true,
-        gravity: "top",
-        position: "right",
         backgroundColor: "red",
-        stopOnFocus: true,
       }).showToast();
     }
   } catch (error) {
     console.error(error);
     Toastify({
       text: "Failed to add blog. Please try again later.",
-      duration: 3000,
-      newWindow: true,
-      close: true,
-      gravity: "top",
-      position: "right",
       backgroundColor: "red",
-      stopOnFocus: true,
     }).showToast();
   }
 };
@@ -130,6 +113,7 @@ const deleteBlog = async (id) => {
       Toastify({
         text: "Blog deleted successfully!",
         backgroundColor: "green",
+        className: "toastify-success",
       }).showToast();
     } else {
       throw new Error("Failed to delete blog.");
