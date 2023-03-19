@@ -3,9 +3,9 @@ const URL = "https://long-ruby-bunny-yoke.cyclic.app/api";
 const renderBlogs = async () => {
   const response = await fetch(`${URL}/blogs?sort=createdAt:desc`);
   const Blogs = await response.json();
-  const BlogsContainer = document.querySelector('#blog_card');
-  let template = '';
-  Blogs.slice(0, 3).forEach(post => {
+  const BlogsContainer = document.querySelector("#blog_card");
+  let template = "";
+  Blogs.slice(0, 3).forEach((post) => {
     template += `
       <div class="blog_card--item">
         <a href="./Pages/ViewBlog.html?id=${post._id}">
@@ -13,14 +13,16 @@ const renderBlogs = async () => {
         </a>
         <div class="blog_card--item--text">
           <h1>${post.title}</h1>
-          <p>By <span>${post.author}</span> / <span> ${post.createdAt}</span></p>
+          <p>By <span>${post.author}</span> / <span> ${
+      post.createdAt
+    }</span></p>
           <p>${post.content.slice(0, 100)}</p>
         </div>
       </div>
     `;
   });
   BlogsContainer.innerHTML = template;
-}
+};
 
 // post querry
 const postQuerry = async (event) => {
@@ -74,4 +76,4 @@ const postQuerry = async (event) => {
   }
 };
 
-window.addEventListener('DOMContentLoaded', ()=>renderBlogs());
+window.addEventListener("DOMContentLoaded", () => renderBlogs());

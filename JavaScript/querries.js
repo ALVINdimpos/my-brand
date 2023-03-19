@@ -1,11 +1,10 @@
-
 const renderQuerries = async () => {
-    const response = await fetch("https://weary-teal-shoe.cyclic.app/querries");
-    const querries = await response.json();
-    const querriesContainer = document.querySelector("#querry");
-    let template = "";
-    querries.forEach((querry) => {
-      template += `
+  const response = await fetch("https://weary-teal-shoe.cyclic.app/querries");
+  const querries = await response.json();
+  const querriesContainer = document.querySelector("#querry");
+  let template = "";
+  querries.forEach((querry) => {
+    template += `
       <tr>
       <td>${querry.name}</td>
       <td>${querry.email}</td>
@@ -18,13 +17,16 @@ const renderQuerries = async () => {
       </td>
      </tr>
         `;
-    });
-    querriesContainer.innerHTML = template;
-  };
-  const deletequerry = async (id) => {
-    const response = await fetch(`https://weary-teal-shoe.cyclic.app/querries/${id}`, {
+  });
+  querriesContainer.innerHTML = template;
+};
+const deletequerry = async (id) => {
+  const response = await fetch(
+    `https://weary-teal-shoe.cyclic.app/querries/${id}`,
+    {
       method: "DELETE",
-    });
-    renderQuerries();
-  };
-  window.addEventListener("DOMContentLoaded", () => renderQuerries());
+    }
+  );
+  renderQuerries();
+};
+window.addEventListener("DOMContentLoaded", () => renderQuerries());

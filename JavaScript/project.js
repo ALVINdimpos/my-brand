@@ -54,9 +54,12 @@ const renderprojects = async () => {
 };
 // delete project
 const deleteproject = async (id) => {
-  const response = await fetch(`https://weary-teal-shoe.cyclic.app/projects/${id}`, {
-    method: "DELETE",
-  });
+  const response = await fetch(
+    `https://weary-teal-shoe.cyclic.app/projects/${id}`,
+    {
+      method: "DELETE",
+    }
+  );
   renderprojects();
 };
 

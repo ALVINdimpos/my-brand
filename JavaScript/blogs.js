@@ -142,7 +142,7 @@ const deleteBlog = async (id) => {
   }
 };
 
- // edit blog
+// edit blog
 const editBlog = async (id) => {
   toggleEditForm();
   const response = await fetch(`${URL}/blog/${id}`);
