@@ -24,7 +24,8 @@ const renderBlog = async () => {
 		  <article>
 			  <h2>${blog.title}</h2>
 			  <img src="${blog.image}" alt="Blog Image">
-			  <p>${blog.content.split('\n')}</p>
+			  <p>${blog.content.replace(/\n/g, "<br>")}</p>
+
 			  <div class="like">
 				  <button id="like-btn">Like</button>
 				  <p id="like-count">${blog.likes} likes</p>
