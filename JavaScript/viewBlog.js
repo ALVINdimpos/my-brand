@@ -34,7 +34,7 @@ const renderBlog = async () => {
 				  <form>
 					  <label for="comment">Comment:</label>
 					  <textarea id="comment" name="comment" required></textarea>
-					  <button type="submit" onclick="postComment(${blog._id})">Post</button>
+					  <button type="submit" onclick="postComment('${blog._id}')">Post</button>
 				  </form>
 				  <article>
 				  <ul class="comments">
@@ -73,22 +73,21 @@ const renderBlog = async () => {
 const postComment = async (id) => {
   const commentInput = document.querySelector("#comment");
   const commentBody = commentInput.value.trim();
-
-  if (comment !== "") {
-    const res = await fetch(`${URL}/blog/create/${id}/comments`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ commentBody }),
-    });
-
-    // Clear the comment input field
-    commentInput.value = "";
-    alert("Your comment has been added successfully");
-    // Refresh the comments section
-    renderBlog();
+  const response = await fetch(`${URL}/blog/create/${id}/comments`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({commentBody: commentBody}),
+  });
+  if (response.ok) {
+    alert("Comment posted!");
+	window.location.reload();
+  } else {
+    alert("Failed to post comment");
   }
-  renderBlog();
 };
+
 window.addEventListener("DOMContentLoaded", () => {
   renderBlog();
 });
