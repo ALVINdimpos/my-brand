@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/login.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Login</title>
-</head>
-
-<body>
+  </head>
+  <body>
     <div class="login_wraper">
-        <div class="first_section">
-            <img src="../Images/mine.png" alt="" class="center">
-            <div class="alvin">
-                <img src="../Images/alvin.png" alt="">
-            </div>
+      <div class="first_section">
+        <img src="../Images/mine.png" alt="" class="center">
+        <div class="alvin">
+          <img src="../Images/alvin.png" alt="">
         </div>
-        <div class="second_section">
-            <div class="container">
-                <div class="text">
-                    <h2><span>Sign in</span></h2>
-                </div>
-                <form id="login-form">
-                    <div class="data">
-                        <label>Email</label>
-                        <input type="text" placeholder="fistonalvin@gmail.com" id="email" required>
-                    </div>
-                    <div class="data">
-                        <label>Password</label>
-                        <input type="password" placeholder="**************" id="password" required>
-                    </div>
-                    <div class="forgot-pass">
-                        <input type="checkbox" name="remember">
-                        <p>Remember me!</p>
-                        <a href="#">Forgot Password?</a>
-                    </div>
-                    <div class="btn">
-                        <button type="submit" id="loader">Sign in</button>
-                    </div>
-                    <div class="forgot-pass" style="float: right; margin-top: 1rem;">
-                        <a href="./signup.html" h>Sign up</a>
-                    </div>
-                </form>
+      </div>
+      <div class="second_section">
+        <div class="container">
+          <div class="text">
+            <h2>
+              <span>Sign in</span>
+            </h2>
+          </div>
+          <form id="login-form">
+            <div class="data">
+              <label>Email</label>
+              <input type="text" placeholder="fistonalvin@gmail.com" id="email" required>
             </div>
+            <div class="data">
+              <label>Password</label>
+              <input type="password" placeholder="**************" id="password" required>
+            </div>
+            <div class="forgot-pass">
+              <input type="checkbox" name="remember">
+              <p>Remember me!</p>
+              <a href="#">Forgot Password?</a>
+            </div>
+            <div class="btn">
+              <button type="submit" id="loader">Sign in</button>
+            </div>
+            <div class="forgot-pass" style="float: right; margin-top: 1rem;">
+              <a href="./signup.html" h>Sign up</a>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
     <script src="../JavaScript/login.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-</body>
-
+  </body>
 </html>
