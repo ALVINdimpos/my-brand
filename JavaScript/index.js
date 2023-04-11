@@ -27,11 +27,13 @@ const renderBlogs = async () => {
 // post querry
 const postQuerry = async (event) => {
   event.preventDefault();
+  const loader = document.querySelector("#querry_loader");
   const name = document.querySelector("#name").value;
   const email = document.querySelector("#email").value;
   const message = document.querySelector("#message").value;
-
+ 
   try {
+    loader.innerText = "Loading ...";
     const response = await fetch(`${URL}/querry/create`, {
       method: "POST",
       headers: {
@@ -68,6 +70,7 @@ const postQuerry = async (event) => {
       className: "toastify-error",
     }).showToast();
   }
+  loader.innerText = "send";
 };
 
 window.addEventListener("DOMContentLoaded", () => renderBlogs());

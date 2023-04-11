@@ -376,7 +376,7 @@
           </div>
           <textarea name="" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
           <div class="invalid-feedback">Please enter a message</div>
-          <button type="submit" class="form__button2">Send</button>
+          <button type="submit" class="form__button2" id="querry_loader">Send</button>
         </form>
       </div>
 
@@ -388,8 +388,8 @@
     <p class="subscribe__copy">Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!
     </p>
     <div class="form">
-      <input type="email" class="form__email" placeholder="Enter your email address" />
-      <button class="form__button">Send</button>
+      <input type="email" id="form__email" class="form__email" placeholder="Enter your email address" />
+      <button class="form__button" id="sub_loader" onclick="submitHandler(event)">Send</button>
     </div>
     <div class="notice">
       <input type="checkbox">
@@ -432,6 +432,7 @@
   </footer>
   <script src="./JavaScript/index.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="./JavaScript/subsription.js"></script>
 </body>
 
 </html>

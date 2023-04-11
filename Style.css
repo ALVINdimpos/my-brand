@@ -1006,13 +1006,20 @@ p {
 
 .project_container {
   display: flex;
+  flex-direction: row;
+  align-items: stretch;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  width: 100%;
   margin: 0 auto;
+  gap: 1rem;
+
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   width: 31%;
   margin-bottom: 40px;
   background: radial-gradient(
