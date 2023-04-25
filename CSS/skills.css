@@ -1,0 +1,87 @@
+#Skills {
+  padding: 50px 0;
+}
+
+.title {
+  font-size: 40px;
+}
+
+.skills_wraper {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin-top: 2rem;
+}
+
+.skills_wraper1 {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 2rem;
+  margin-left: 4rem;
+}
+
+.skills_wraper1 i {
+  color: #47d8e1;
+}
+
+.icons {
+  font-size: 8rem;
+}
+
+.skills_wraper {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  gap: 1rem;
+}
+
+.skills_wraper p {
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.skills_wraper i {
+  font-size: 320px;
+}
+
+.skills {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .skills-wraper,
+  .skills-wraper1 {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .skills-wraper1 {
+    margin-left: 0;
+  }
+
+  .skills_wraper i {
+    font-size: 160px;
+  }
+
+  .skills_wraper p {
+    font-size: 16px;
+  }
+  .skills-wraper h2 {
+    display: none;
+  }
+  .skills_wraper {
+    width: 100%;
+    flex-direction: column;
+  }
+  .skills-wraper1 {
+    width: 100%;
+    margin: 1rem auto;
+    gap: 1rem;
+  }
+  .skills-wraper1 h2 {
+    display: none;
+  }
+}

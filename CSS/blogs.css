@@ -1,0 +1,29 @@
+.blog_card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.blog_card--item {
+  width: calc(33.33% - 20px);
+  margin-bottom: 40px;
+}
+
+.blog_card--item img {
+  width: 100%;
+  height: 200px;
+}
+
+@media only screen and (max-width: 768px) {
+  .blog_card--item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .blog_card--item {
+    width: 100%;
+  }
+}

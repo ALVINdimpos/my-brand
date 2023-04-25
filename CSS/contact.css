@@ -1,0 +1,164 @@
+/* Contact Section */
+#Contact {
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .discus {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px;
+  }
+  
+  .discus h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .discus h1 span {
+    color: #00a9e0;
+  }
+  
+  .discus p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: white;
+  }
+  
+  .contact {
+    width: 100%;
+    max-width: 500px;
+    background: radial-gradient(
+      75.85% 168.08% at 25.62% 78.02%,
+      rgba(237, 238, 248, 0.3) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    padding: 40px;
+    box-shadow: 0px 4px 4px rgba(2, 2, 2, 0.25);
+  }
+  
+  .contact .contact_info1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .contact .contact_info--item {
+    width: 49%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact .contact_info--item i {
+    font-size: 20px;
+    color: #00a9e0;
+    margin-right: 10px;
+  }
+  
+  .contact .contact_info--item p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: white;
+  }
+  
+  .contact .iniputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .contact .form-group {
+    width: 49%;
+    margin-bottom: 20px;
+  }
+  
+  .contact label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color:white#333333;
+    margin-bottom: 5px;
+  }
+  
+  .contact input[type="text"],
+  .contact input[type="email"],
+  .contact input[type="number"],
+  .contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    color: #333333;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+  
+  .contact input[type="text"]:focus,
+  .contact input[type="email"]:focus,
+  .contact input[type="number"]:focus,
+  .contact textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px #00a9e0;
+  }
+  
+  .contact .form__button2 {
+    background-color: #00a9e0;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .contact .form__button2:hover {
+    background-color: #ffffff;
+    color: #00a9e0;
+    border: 2px solid #00a9e0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .discus {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .discus h1 {
+      font-size: 36px;
+    }
+  
+    .contact {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .contact .contact_info1 {
+      flex-direction: column;
+    }
+  
+    .contact .contact_info--item {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .contact .iniputs {
+      flex-direction: column;
+    }
+  
+    .contact .form-group {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }

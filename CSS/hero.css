@@ -1,0 +1,134 @@
+/*hero*/
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+  }
+  .hero__container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+  }
+  .hero__title {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+  .hero__description {
+    font-size: 20px;
+    width: 80%;
+    font-weight: lighter;
+    line-height: 40px;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s;
+  }
+  .my-photo {
+    flex-basis: 40%;
+    margin-right: 5%;
+  }
+  .my-photo img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 0.5s ease forwards;
+    animation-delay: 1.5s;
+  }
+  
+  .social_media {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 50%;
+    opacity: 0;
+    animation: slideIn 0.5s ease forwards;
+    animation-delay: 1.5s;
+    transform: translateX(-50px);
+  }
+  .social_media a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    text-decoration: none;
+  }
+  .social_media a:hover {
+    color: #47d8e1;
+    transition: 0.5s;
+  }
+  .social_media i {
+    color: #47d8e1;
+    font-size: 2rem;
+   margin-right: 0.5rem;
+  }
+  .social_media i:hover {
+    color: white;
+    transition: 0.5s;
+  }
+  .social_media p {
+    font-size: 1.2rem;
+    margin: 0;
+    }
+  
+  /* Define the animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  /*hero*/
+  /* For screens smaller than 768px */
+@media (max-width: 767px) {
+  .hero {
+    flex-direction: column-reverse;
+  }
+  .hero img {
+    margin-left: 12px;
+    width: 300px;
+    height: 300px;
+  }
+  .hero__description {
+    margin: auto;
+    margin-left: 12px;
+    width: 90%;
+  }
+  
+  .social_media{
+    width: 100%;
+  }
+  .social_media a:nth-child(4) {
+    display: none;
+  }
+  .social_media i {
+    font-size: 11px;
+  }
+  .title {
+    margin-top: -15px;
+    font-size: 36px;
+  }
+}
