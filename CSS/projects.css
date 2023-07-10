@@ -1,63 +1,141 @@
-.projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+* project-section */
+
+.project-section{
     width: 100%;
-  }
-  
-  .project {
+    min-height: 100vh;
+    padding: 150px 100px 100px;
+    position: fixed;
+    top: 0;
+    transition: 1s;
+    opacity: 0;
+}
+
+.project-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 100px;
+}
+
+.project-card{
+    height: 400px;
     position: relative;
-    width: 350px;
-    height: 200px;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.5s ease;
-    margin-bottom: 20px;
-  }
-  
-  .project img {
+    cursor: pointer;
+    border-radius:1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.project-img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  .project .overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.project-content{
+    position: relative;
+    padding: 40px;
+    color: #fff;
+    transition: .5s;
+    opacity: 0;
+}
+
+.project-title{
+    font-size: 50px;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 300;
+}
+
+.project-info{
+    margin: 40px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.project-btn-grp{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.project-btn{
+    height: 40px;
+    text-transform: capitalize;
+    font-size: 18px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.project-btn.live{
+    background: none;
+    border: 2px solid #fff;
+}
+
+.project-card:hover .project-img{
+    opacity: .2;
+
+}
+
+.project-card:hover .project-content{
+    opacity: 1;
+}
+/* Media query for screens smaller than 768px (e.g., mobile phones) */
+@media (max-width: 767px) {
+  .project-title {
+    /* Adjust styles for smaller screens */
+    font-size: 30px;
+  }
+  .project-info{
+    /* Adjust styles for smaller screens */
+    font-size: 16px;
+  }
+  .project-btn-grp{
+    /* Adjust styles for smaller screens */
+    padding-bottom: 1rem;
+  }
+  .project-container {
+    /* Adjust styles for smaller screens */
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+  }
+  .project-content {
+    /* Adjust styles for smaller screens */
     padding: 20px;
-    transition: all 0.5s ease;
-    transform: translateY(100%);
+    height: auto!important;
+    min-height: unset !important ;
+
   }
-  
-  .project:hover {
-    transform: translateY(-10px);
-  }
-  
-  .project:hover img {
-    transform: scale(1.1);
-  }
-  
-  .project:hover .overlay {
-    transform: translateY(0);
-  }
-  
-  .project a {
-    display: block;
+  .project-btn{
+    /* Adjust styles for smaller screens */
+    font-size: 14px;
+    margin-right:.5em;
+    margin-left:.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 100%;
+
   }
-  
-  @media screen and (max-width: 768px) {
-    .projects {
-      width: 100%;
-    }
-    .project {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  }
+
+
+
+
+  /* Add more styles as needed for smaller screens */
+}
+
+/* Media query for screens between 768px and 1024px (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Add styles to fit the design for tablet-sized screens */
+}
+
+/* Media query for screens larger than 1024px (e.g., desktops) */
+@media (min-width: 1024px) {
+  /* Add styles to fit the design for larger screens */
+}

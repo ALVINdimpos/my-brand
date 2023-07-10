@@ -34,7 +34,7 @@
     rgba(255, 255, 255, 0) 100%
   );
   border-radius: 50%;
-  color: white;
+  color: rgb(211, 18, 111);
   display: flex;
   font-size: 50px;
   height: 80px;
@@ -44,14 +44,26 @@
   top: -25px;
   width: 80px;
 }
-
+.services .service-card:nth-child(2) .icon {
+  font-size: 40px;
+  color: rgb(17, 104, 235);
+}
+.services .service-card:nth-child(3) .icon {
+  font-size: 40px;
+  color: rgb(255, 0, 0);
+}
+.services .service-card:nth-child(4) .icon {
+  font-size: 40px;
+  color: rgb(0, 255, 0);
+}
 h3 {
   font-size: 24px;
   margin-bottom: 15px;
   margin-top: 0;
+  color: #47d8e1;
 }
 
-p {
+.service-card p {
   font-size: 16px;
   margin-bottom: 0;
   margin-top: 15px;
