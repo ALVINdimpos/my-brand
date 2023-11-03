@@ -15,14 +15,14 @@ const errorMessages = {
 
 const showError = (input, message) => {
   const formGroup = input.parentElement;
-  const error = formGroup.querySelector(".invalid-feedback");
+  const error = formGroup.querySelector("invalid-feedback");
   error.textContent = message;
   error.style.display = "block";
 };
 
 const hideError = (input) => {
   const formGroup = input.parentElement;
-  const error = formGroup.querySelector(".invalid-feedback");
+  const error = formGroup.querySelector("invalid-feedback");
   error.textContent = "";
   error.style.display = "none";
 };
