@@ -8,7 +8,7 @@
 [![GitHub commits](https://img.shields.io/github/commit-activity/t/ALVINdimpos/my-brand?style=social&logo=github)](https://github.com/ALVINdimpos/my-brand/commits)
 [![Pull requests](https://img.shields.io/github/issues-pr/ALVINdimpos/my-brand?style=social&logo=github)](https://github.com/ALVINdimpos/my-brand/pulls)
 
-![demo](.github/README_ASSETS/3d-portfolio.png)
+![demo](.github/README_ASSETS/demo.png)
 
 [![ALVINdimpos](https://custom-icon-badges.demolab.com/badge/made%20by%20-ALVINdimpos-556bf2?logo=github&logoColor=white&labelColor=101827)](https://github.com/luadnjexa)
 [![License](https://img.shields.io/github/license/ALVINdimpos/my-brand?color=dddddd&labelColor=000000)](https://github.com/ALVINdimpos/my-brand/blob/main/LICENSE)
