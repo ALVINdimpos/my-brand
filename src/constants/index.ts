@@ -177,17 +177,17 @@ const testimonials: TTestimonial[] = [
   {
     testimonial:
       "I've never met a web developer who truly cares about their clients' success like Alvin does.",
-    name: "Chris Brown",
+    name: "Fredrick Mwizerwa",
     designation: "COO",
-    company: "DEF Corp",
+    company: "The eye visibility magazine",
     image: "",
   },
   {
     testimonial:
       "After Alvin optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
+    name: "Rwanda Art Council",
+    designation: "ORG",
+    company: "RAC",
     image: "",
   },
 ];
