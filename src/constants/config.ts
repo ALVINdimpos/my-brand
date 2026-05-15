@@ -29,7 +29,10 @@ type TConfig = {
         placeholder: string;
       };
     };
-  } & TSection;
+    introEyebrow: string;
+    introTitle: string;
+    introPills: readonly string[];
+  } & Required<TSection>;
   sections: {
     about: Required<TSection>;
     experience: TSection;
@@ -46,11 +49,26 @@ export const config: TConfig = {
   },
   hero: {
     name: "Alvin Fiston",
-    p: ["Talented Full Stack Developer based in Kigali, Rwanda,", "with 3+ years of experience.",],
+    p: [
+      "Full Stack Developer · I build web apps & software systems,",
+      "sell trading bots, and mentor developers — Kigali, Rwanda.",
+    ],
   },
   contact: {
     p: "Get in touch",
     h2: "Contact.",
+    introEyebrow: "You're exactly where you need to be",
+    introTitle:
+      "Got ideas, goals, or markets to automate — I've got you covered.",
+    introPills: [
+      "Idea → product",
+      "Websites & systems",
+      "Learn how to code",
+      "Coding mentor",
+      "Expert Advisors & bots",
+    ] as const,
+    content:
+      "Tell me what's on your mind: a build you need shipped, a skill you want to learn, mentorship to level up faster, or a proven Forex EA you can rely on — I'm here.",
     form: {
       name: {
         span: "Your Name",
@@ -67,11 +85,7 @@ export const config: TConfig = {
     about: {
       p: "Introduction",
       h2: "Overview.",
-      content: `I'm a skilled software developer with experience in TypeScript and
-      JavaScript, and expertise in frameworks like React, Node.js, and
-      Three.js. I'm a quick learner and collaborate closely with clients to
-      create efficient, scalable, and user-friendly solutions that solve
-      real-world problems. Let's work together to bring your ideas to life!`,
+      content: `Full Stack Developer building web apps and software systems that solve real problems. I work with TypeScript, React, and Node.js to deliver clean, scalable solutions. I also mentor developers 1-on-1 and sell trading bots — automated programs that trade Forex on your behalf, 24/7, while you sleep.`,
     },
     experience: {
       p: "What I have done so far",

@@ -70,7 +70,7 @@ const Navbar = () => {
           </p>
         </Link>
 
-        <ul className="hidden list-none flex-row gap-10 sm:flex">
+        <ul className="hidden list-none flex-row items-center gap-10 sm:flex">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
@@ -81,6 +81,16 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+          <li>
+            <a
+              href="/cv.pdf"
+              download
+              className="rounded-lg px-4 py-2 text-[15px] font-semibold text-white transition hover:brightness-110"
+              style={{ background: "linear-gradient(90deg, #804dee 0%, #bf61ff 100%)" }}
+            >
+              Download CV
+            </a>
+          </li>
         </ul>
 
         <div className="flex flex-1 items-center justify-end sm:hidden">
@@ -103,13 +113,22 @@ const Navbar = () => {
                   className={`font-poppins cursor-pointer text-[16px] font-medium ${
                     active === nav.id ? "text-white" : "text-secondary"
                   }`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                  }}
+                  onClick={() => setToggle(!toggle)}
                 >
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/cv.pdf"
+                  download
+                  className="rounded-lg px-4 py-2 text-[15px] font-semibold text-white transition hover:brightness-110"
+                  style={{ background: "linear-gradient(90deg, #804dee 0%, #bf61ff 100%)" }}
+                  onClick={() => setToggle(false)}
+                >
+                  Download CV
+                </a>
+              </li>
             </ul>
           </div>
         </div>

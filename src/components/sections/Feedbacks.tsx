@@ -1,11 +1,44 @@
+import React from "react";
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 
-import { styles } from "../../constants/styles";
 import { fadeIn } from "../../utils/motion";
 import { testimonials } from "../../constants";
 import { Header } from "../atoms/Header";
 import { TTestimonial } from "../../types";
 import { config } from "../../constants/config";
+
+/** Acronym or first two initials for avatar fallback */
+function initialsFromName(name: string): string {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (parts.length >= 2) {
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  }
+  return parts[0]?.slice(0, 2).toUpperCase() ?? "?";
+}
+
+const STAR_COLORS = ["#ffe066", "#ffd633", "#ffcc29", "#ffc41f", "#f5af19"];
+
+const StarsRow = () => (
+  <div className="flex gap-1" aria-hidden>
+    {[0, 1, 2, 3, 4].map((i) => (
+      <svg
+        key={String(i)}
+        viewBox="0 0 24 24"
+        className="h-4 w-4"
+        fill={STAR_COLORS[i]}
+      >
+        <path d="M12 3.3l2.18 6.71h7.06l-5.72 4.15 2.18 6.71L12 16.71l-5.72 4.15 2.18-6.71L2.74 10h7.06L12 3.3z" />
+      </svg>
+    ))}
+  </div>
+);
+
+const cardAccents = [
+  { from: "#00cea8", to: "#2f80ed" },
+  { from: "#f5af19", to: "#bf61ff" },
+  { from: "#bf61ff", to: "#ec008c" },
+] as const;
 
 const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
   index,
@@ -14,49 +47,132 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
   designation,
   company,
   image,
-}) => (
-  <motion.div
-    variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className="bg-black-200 xs:w-[320px] w-full rounded-3xl p-10"
-  >
-    <p className="text-[48px] font-black text-white">"</p>
+}) => {
+  const accent = cardAccents[index % cardAccents.length];
+  const hasPhoto = typeof image === "string" && image.length > 0;
+  const initials = initialsFromName(name);
 
-    <div className="mt-1">
-      <p className="text-[18px] tracking-wider text-white">{testimonial}</p>
+  return (
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.35, 0.75)}
+      style={{ display: "flex", flex: 1 }}
+    >
+      <Tilt
+        glareEnable
+        tiltEnable
+        tiltMaxAngleX={10}
+        tiltMaxAngleY={10}
+        glareColor="#aaa6c3"
+        glareMaxOpacity={0.12}
+        scale={1.02}
+        transitionSpeed={1500}
+        style={{ display: "flex", width: "100%" }}
+      >
+        <div className="green-pink-gradient shadow-card group/card relative flex w-full overflow-hidden rounded-[22px] p-[1.5px]">
+          <figure className="bg-tertiary relative flex w-full flex-col overflow-hidden rounded-[21px] p-8">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-20 blur-3xl transition-opacity duration-500 group-hover/card:opacity-45"
+              style={{
+                background: `radial-gradient(circle, ${accent.from} 0%, ${accent.to} 55%, transparent 70%)`,
+              }}
+            />
 
-      <div className="mt-7 flex items-center justify-between gap-1">
-        <div className="flex flex-1 flex-col">
-          <p className="text-[16px] font-medium text-white">
-            <span className="blue-text-gradient">@</span> {name}
-          </p>
-          <p className="text-secondary mt-1 text-[12px]">
-            {designation} of {company}
-          </p>
+            <div className="relative flex items-start justify-between gap-4">
+              <StarsRow />
+
+              <div
+                aria-hidden
+                className="select-none font-serif text-[76px] font-black leading-none text-white/[0.06]"
+                style={{
+                  background: `linear-gradient(135deg, ${accent.from}45, ${accent.to}33)`,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                “
+              </div>
+            </div>
+
+            <blockquote className="relative z-10 mt-2 flex-1">
+              <p className="text-secondary text-[16px] font-light leading-[28px] tracking-wide text-[#dfd9ff]">
+                <span className="font-medium text-white/95">{testimonial}</span>
+              </p>
+            </blockquote>
+
+            <div
+              aria-hidden
+              className="relative z-10 my-8 h-[2px] w-full rounded-full opacity-60"
+              style={{
+                background: `linear-gradient(90deg, transparent, ${accent.from}, ${accent.to}, transparent)`,
+              }}
+            />
+
+            <figcaption className="relative z-10 flex items-center gap-4">
+              {hasPhoto ? (
+                <img
+                  src={image}
+                  alt={name}
+                  className="h-14 w-14 flex-shrink-0 rounded-2xl object-cover ring-2 ring-white/10"
+                />
+              ) : (
+                <div
+                  className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl text-lg font-bold text-white shadow-inner ring-2 ring-white/10"
+                  style={{
+                    background: `linear-gradient(135deg, ${accent.from}, ${accent.to})`,
+                  }}
+                  aria-hidden
+                >
+                  {initials}
+                </div>
+              )}
+
+              <div className="min-w-0 flex-1">
+                <cite className="not-italic">
+                  <p
+                    className="truncate text-[17px] font-semibold tracking-tight"
+                    style={{
+                      background: `linear-gradient(90deg, ${accent.from}, ${accent.to})`,
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    {name}
+                  </p>
+                </cite>
+                <p className="text-secondary mt-1 truncate text-[12px] font-medium uppercase tracking-[0.12em] text-white/50">
+                  {designation}
+                  <span className="text-white/35"> · </span>
+                  {company}
+                </p>
+              </div>
+            </figcaption>
+          </figure>
         </div>
-
-        <img
-          src={image}
-          alt={`feedback_by-${name}`}
-          className="h-10 w-10 rounded-full object-cover"
-        />
-      </div>
-    </div>
-  </motion.div>
-);
+      </Tilt>
+    </motion.div>
+  );
+};
 
 const Feedbacks = () => {
   return (
-    <div className="bg-black-100 mt-12 rounded-[20px]">
-      <div
-        className={`${styles.padding} bg-tertiary min-h-[300px] rounded-2xl`}
+    <div className="mx-auto max-w-7xl px-6 py-10 sm:px-16 sm:py-16">
+      {/* Header — no background card */}
+      <Header useMotion={true} {...config.sections.feedbacks} />
+      <motion.p
+        variants={fadeIn("", "", 0.15, 0.9)}
+        className="text-secondary mt-4 max-w-2xl text-[15px] leading-[26px]"
       >
-        <Header useMotion={true} {...config.sections.feedbacks} />
-      </div>
-      <div
-        className={`${styles.paddingX} -mt-20 flex flex-wrap gap-7 pb-14 max-sm:justify-center`}
-      >
-        {testimonials.map((testimonial, index) => (
-          <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
+        Real words from collaborators and clients. Every partnership is built
+        on clarity, consistency, and results.
+      </motion.p>
+
+      {/* Cards — stack on mobile, row on desktop */}
+      <div className="mt-12 flex flex-col gap-6 md:flex-row md:items-stretch">
+        {testimonials.map((t, index) => (
+          <FeedbackCard key={t.name} index={index} {...t} />
         ))}
       </div>
     </div>

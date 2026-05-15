@@ -13,6 +13,16 @@
   color-scheme: dark;
 }
 
+::selection {
+  background-color: #804dee;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #804dee;
+  color: #ffffff;
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;

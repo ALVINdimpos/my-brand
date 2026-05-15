@@ -8,10 +8,6 @@ import type {
 } from "../types";
 
 import {
-  mobile,
-  backend,
-  creator,
-  web,
   javascript,
   typescript,
   html,
@@ -50,20 +46,49 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-    title: "Web Developer",
-    icon: web,
+    title: "Development",
+    subtitle: "Software · Web · Systems",
+    tag: "Build",
+    description:
+      "End-to-end engineering — from sleek marketing sites to full-blown business systems and custom software tailored to your workflow.",
+    highlights: [
+      "Software development (desktop & cross-platform apps)",
+      "Website development (landing, e-commerce, dashboards)",
+      "System development (ERPs, internal tools, APIs)",
+    ],
+    iconType: "code",
+    accentFrom: "#00cea8",
+    accentTo: "#2f80ed",
   },
   {
-    title: "UI/UX Designer",
-    icon: mobile,
+    title: "Mentorship",
+    subtitle: "1-on-1 Coding Coach",
+    tag: "Teach",
+    description:
+      "Learn to code with a real builder. Personalized roadmaps, live pair-programming, and project-based mentorship to get you from zero to shipping.",
+    highlights: [
+      "Beginner-friendly intro to programming",
+      "Modern web stack (React, Node, TypeScript)",
+      "Career guidance, portfolio & interview prep",
+    ],
+    iconType: "mentor",
+    accentFrom: "#f5af19",
+    accentTo: "#f12711",
   },
   {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
+    title: "Trading Bots",
+    subtitle: "I Sell Trading Bots for MT4 / MT5",
+    tag: "Trade",
+    description:
+      "I sell trading bots — automated programs you install on MT4 or MT5 that trade Forex for you, 24/7. No manual work, no emotions, just your account running on autopilot while you sleep.",
+    highlights: [
+      "TINGA TINGA ROBOT — adaptive trend strategy",
+      "PIPS GHOST ROBOT EA V7 — precision scalper",
+      "Setup, optimization & lifetime updates",
+    ],
+    iconType: "bot",
+    accentFrom: "#bf61ff",
+    accentTo: "#ec008c",
   },
 ];
 
@@ -195,66 +220,30 @@ const testimonials: TTestimonial[] = [
 const projects: TProject[] = [
   {
     name: "SSEIN DELIVERY",
+    category: "Delivery Platform",
     description:
-      " A landing page for a delivery app that allows users to order food, groceries, and other items from local stores and have them delivered to their door.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "PostgreSQL",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
+      "A landing page for a delivery app that allows users to order food, groceries, and other items from local stores and have them delivered to their door.",
     image: sseindelvery,
     sourceCodeLink: "https://github.com/ALVINdimpos",
+    liveSiteLink: "",
   },
   {
     name: "SSEIN CARGO",
+    category: "Logistics System",
     description:
-      "Robust and user-friendly web application designed to streamline and optimize cargo management processes. Tailored for businesses involved in logistics, shipping, and transportation,",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
+      "Robust and user-friendly web application designed to streamline and optimize cargo management processes. Tailored for businesses involved in logistics, shipping, and transportation.",
     image: sseincargo,
     sourceCodeLink: "https://github.com/ALVINdimpos",
+    liveSiteLink: "",
   },
   {
     name: "SSEIN SANTE",
+    category: "Healthcare App",
     description:
       "A web application that allows users to book appointments with doctors, view their medical records, and chat with doctors online.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
     image: sseinsante,
     sourceCodeLink: "https://github.com/ALVINdimpos",
+    liveSiteLink: "",
   },
 ];
 

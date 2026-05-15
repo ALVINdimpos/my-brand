@@ -20,12 +20,10 @@ export type TTestimonial = {
 
 export type TProject = {
   description: string;
-  tags: {
-    name: string;
-    color: string;
-  }[];
   image: string;
   sourceCodeLink: string;
+  liveSiteLink?: string;
+  category?: string;
 } & Required<Pick<TCommonProps, "name">>;
 
 export type TTechnology = Required<Omit<TCommonProps, "title">>;
@@ -34,7 +32,18 @@ export type TNavLink = {
   id: string;
 } & Required<Pick<TCommonProps, "title">>;
 
-export type TService = Required<Omit<TCommonProps, "name">>;
+export type TServiceIcon = "code" | "mentor" | "bot";
+
+export type TService = {
+  title: string;
+  subtitle: string;
+  description: string;
+  highlights: string[];
+  iconType: TServiceIcon;
+  accentFrom: string;
+  accentTo: string;
+  tag: string;
+};
 
 export type TMotion = {
   direction: "up" | "down" | "left" | "right" | "";
