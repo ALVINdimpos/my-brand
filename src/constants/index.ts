@@ -82,7 +82,7 @@ const services: TService[] = [
     description:
       "I sell trading bots — automated programs you install on MT4 or MT5 that trade Forex for you, 24/7. No manual work, no emotions, just your account running on autopilot while you sleep.",
     highlights: [
-      "TINGA TINGA ROBOT — adaptive trend strategy",
+      "TINGA TINGA NEW EA — adaptive trend strategy",
       "PIPS GHOST ROBOT EA V7 — precision scalper",
       "Setup, optimization & lifetime updates",
     ],
