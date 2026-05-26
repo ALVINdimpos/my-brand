@@ -36,26 +36,6 @@ TypeScript · React · Redux Toolkit · Node.js · MongoDB · Tailwind CSS · Th
 
 ---
 
-## Work Experience
-
-| Period | Role | Company |
-|--------|------|---------|
-| Aug 2023 – Present | Full Stack Developer | ADMINATETE |
-| Nov 2023 – Present | Full Stack Developer | Bizcotap |
-| Jul 2023 – Dec 2023 | Full Stack Developer | Imena Softek Ltd |
-
----
-
-## Projects
-
-**SSEIN DELIVERY** — Delivery platform for ordering food, groceries, and items from local stores.
-
-**SSEIN CARGO** — Cargo management web app streamlining logistics, shipping, and transportation operations.
-
-**SSEIN SANTE** — Healthcare app for booking doctor appointments, viewing medical records, and online consultations.
-
----
-
 ## Contact
 
 | Channel | Link / Handle |
@@ -70,4 +50,3 @@ TypeScript · React · Redux Toolkit · Node.js · MongoDB · Tailwind CSS · Th
 
 ---
 
-Built with React · TypeScript · Three.js · Tailwind CSS · Vite
