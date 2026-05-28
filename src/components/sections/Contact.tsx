@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { EarthCanvas } from "../canvas";
 import { SectionWrapper } from "../../hoc";
 import { config } from "../../constants/config";
@@ -15,7 +13,7 @@ const INITIAL_STATE = Object.fromEntries(
 const emailjsConfig = {
   serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
   templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  accessToken: import.meta.env.VITE_EMAILJS_ACCESS_TOKEN,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 };
 
 const socials = [
@@ -71,48 +69,57 @@ const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [form, setForm] = useState(INITIAL_STATE);
   const [loading, setLoading] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | undefined
   ) => {
     if (e === undefined) return;
     const { name, value } = e.target;
+    if (isSent) setIsSent(false);
+    if (submitError) setSubmitError("");
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement> | undefined) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement> | undefined) => {
     if (e === undefined) return;
     e.preventDefault();
     setLoading(true);
+    setSubmitError("");
 
-    emailjs
-      .send(
+    try {
+      if (
+        !emailjsConfig.serviceId ||
+        !emailjsConfig.templateId ||
+        !emailjsConfig.publicKey
+      ) {
+        throw new Error("EmailJS is not configured");
+      }
+
+      await emailjs.send(
         emailjsConfig.serviceId,
         emailjsConfig.templateId,
         {
           from_name: form.name,
-          to_name: config.html.fullName,
           from_email: form.email,
+          to_name: config.html.fullName,
           to_email: config.html.email,
           message: form.message,
+          reply_to: form.email,
         },
-        emailjsConfig.accessToken
-      )
-      .then(
-        () => {
-          setLoading(false);
-          toast.success("Thank you. I will get back to you as soon as possible!", {
-            position: "top-right",
-            style: { fontSize: "16px", fontWeight: "bold", marginTop: "100px" },
-          });
-          setForm(INITIAL_STATE);
-        },
-        (error) => {
-          setLoading(false);
-          console.log(error);
-          toast.error("Something went wrong. Please try again later.");
-        }
+        emailjsConfig.publicKey
       );
+
+      setForm(INITIAL_STATE);
+      formRef.current?.reset();
+      setIsSent(true);
+    } catch (error) {
+      console.error(error);
+      setSubmitError("Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -191,6 +198,38 @@ const Contact = () => {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="bg-black-100 rounded-2xl p-8 xl:w-[44%] xl:shrink-0"
         >
+          {isSent ? (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-5 flex items-start gap-3 rounded-xl border border-[#00cea8]/30 bg-[#00cea8]/10 px-4 py-3"
+              role="status"
+              aria-live="polite"
+            >
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#00cea8] text-xs font-bold text-black">
+                ✓
+              </span>
+              <div>
+                <p className="text-sm font-semibold text-white">Message sent successfully!</p>
+                <p className="mt-1 text-sm text-white/70">
+                  Thank you for reaching out. I&apos;ve received your message and will get back to you as soon as possible.
+                </p>
+              </div>
+            </motion.div>
+          ) : null}
+
+          {submitError ? (
+            <div
+              className="mb-5 flex items-start gap-3 rounded-xl border border-red-400/30 bg-red-400/10 px-4 py-3"
+              role="alert"
+            >
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-400 text-xs font-bold text-black">
+                !
+              </span>
+              <p className="text-sm text-white/90">{submitError}</p>
+            </div>
+          ) : null}
+
           <form
             ref={formRef}
             onSubmit={handleSubmit}
@@ -200,6 +239,7 @@ const Contact = () => {
             <label className="flex flex-col gap-2">
               <span className="text-[12px] font-semibold uppercase tracking-widest text-white/50">
                 {config.contact.form.name.span}
+                <span className="ml-1 text-[#00cea8]">*</span>
               </span>
               <input
                 type="text"
@@ -207,6 +247,7 @@ const Contact = () => {
                 value={form.name}
                 onChange={handleChange}
                 placeholder={config.contact.form.name.placeholder}
+                required
                 className="bg-tertiary placeholder:text-secondary rounded-lg border border-white/5 px-4 py-3 text-sm font-medium text-white outline-none focus:border-[#00cea8]/40 focus:ring-1 focus:ring-[#00cea8]/30"
               />
             </label>
@@ -215,6 +256,7 @@ const Contact = () => {
             <label className="flex flex-col gap-2">
               <span className="text-[12px] font-semibold uppercase tracking-widest text-white/50">
                 {config.contact.form.email.span}
+                <span className="ml-1 text-[#00cea8]">*</span>
               </span>
               <input
                 type="email"
@@ -222,6 +264,7 @@ const Contact = () => {
                 value={form.email}
                 onChange={handleChange}
                 placeholder={config.contact.form.email.placeholder}
+                required
                 className="bg-tertiary placeholder:text-secondary rounded-lg border border-white/5 px-4 py-3 text-sm font-medium text-white outline-none focus:border-[#00cea8]/40 focus:ring-1 focus:ring-[#00cea8]/30"
               />
             </label>
@@ -230,6 +273,7 @@ const Contact = () => {
             <label className="col-span-1 flex flex-col gap-2 sm:col-span-2">
               <span className="text-[12px] font-semibold uppercase tracking-widest text-white/50">
                 {config.contact.form.message.span}
+                <span className="ml-1 text-[#00cea8]">*</span>
               </span>
               <textarea
                 name="message"
@@ -237,6 +281,7 @@ const Contact = () => {
                 value={form.message}
                 onChange={handleChange}
                 placeholder={config.contact.form.message.placeholder}
+                required
                 className="bg-tertiary placeholder:text-secondary resize-none rounded-lg border border-white/5 px-4 py-3 text-sm font-medium text-white outline-none focus:border-[#00cea8]/40 focus:ring-1 focus:ring-[#00cea8]/30"
               />
             </label>
@@ -265,8 +310,6 @@ const Contact = () => {
           <EarthCanvas />
         </motion.div>
       </div>
-
-      <ToastContainer />
     </div>
   );
 };
