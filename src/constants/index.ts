@@ -25,7 +25,7 @@ import {
   bizcotap,
   sseindelvery,
   sseincargo,
-  sseinsante,
+  primeworldnews,
   threejs,
 } from "../assets";
 
@@ -224,8 +224,8 @@ const projects: TProject[] = [
     description:
       "A landing page for a delivery app that allows users to order food, groceries, and other items from local stores and have them delivered to their door.",
     image: sseindelvery,
-    sourceCodeLink: "https://github.com/ALVINdimpos",
-    liveSiteLink: "",
+    sourceCodeLink: "https://github.com/ALVINdimpos/Ssein-landing-page-and-dashboard",
+    liveSiteLink: "https://www.sseindelivery.com/",
   },
   {
     name: "SSEIN CARGO",
@@ -233,17 +233,17 @@ const projects: TProject[] = [
     description:
       "Robust and user-friendly web application designed to streamline and optimize cargo management processes. Tailored for businesses involved in logistics, shipping, and transportation.",
     image: sseincargo,
-    sourceCodeLink: "https://github.com/ALVINdimpos",
-    liveSiteLink: "",
+    sourceCodeLink: "https://github.com/ALVINdimpos/SseinCargo",
+    liveSiteLink: "https://www.sseincargo.com/",
   },
   {
-    name: "SSEIN SANTE",
-    category: "Healthcare App",
+    name: "PRIMEWORLD NEWS",
+    category: "News Platform",
     description:
-      "A web application that allows users to book appointments with doctors, view their medical records, and chat with doctors online.",
-    image: sseinsante,
+      "An independent global news platform delivering live coverage across world, tech, business, sports, science, and entertainment — built for fast, readable breaking stories.",
+    image: primeworldnews,
     sourceCodeLink: "https://github.com/ALVINdimpos",
-    liveSiteLink: "",
+    liveSiteLink: "https://www.primeworld.news/",
   },
 ];
 

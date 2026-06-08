@@ -31,7 +31,7 @@ import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import sseindelvery from "./sseindelvery.png";
 import sseincargo from "./sseincargo.png";
-import sseinsante from "./sseinsante.png";
+import primeworldnews from "./primeworldnews.png";
 import imena from "././company/imena.png";
 import bizcotap from "././company/bizcotap.png";
 import adminatete from "././company/adminatete.webp";
@@ -67,7 +67,7 @@ export {
   tripguide,
   sseindelvery,
   sseincargo,
-  sseinsante,
+  primeworldnews,
   imena,
   bizcotap,
   adminatete,
