@@ -11,11 +11,9 @@ import type { TService, TServiceIcon } from "../../types";
 
 const ServiceIcon: React.FC<{
   type: TServiceIcon;
-  gradientId: string;
-  from: string;
-  to: string;
-}> = ({ type, gradientId, from, to }) => {
-  const stroke = `url(#${gradientId})`;
+  color: string;
+}> = ({ type, color }) => {
+  const stroke = color;
 
   return (
     <svg
@@ -28,12 +26,6 @@ const ServiceIcon: React.FC<{
       className="h-14 w-14"
       aria-hidden
     >
-      <defs>
-        <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor={from} />
-          <stop offset="100%" stopColor={to} />
-        </linearGradient>
-      </defs>
 
       {type === "code" && (
         <>
@@ -79,15 +71,13 @@ const ServiceCard: React.FC<{ index: number; service: TService }> = ({
   index,
   service,
 }) => {
-  const gradientId = `grad-${service.iconType}-${index}`;
-
   return (
     <Tilt
       glareEnable
       tiltEnable
       tiltMaxAngleX={18}
       tiltMaxAngleY={18}
-      glareColor="#aaa6c3"
+      glareColor="#9a9488"
       glareMaxOpacity={0.15}
       scale={1.02}
       transitionSpeed={1500}
@@ -95,22 +85,14 @@ const ServiceCard: React.FC<{ index: number; service: TService }> = ({
     >
       <motion.div
         variants={fadeIn("right", "spring", index * 0.35, 0.75)}
-        className="green-pink-gradient shadow-card group relative flex w-full overflow-hidden rounded-[22px] p-[1.5px]"
+        className="card-shell group relative flex w-full overflow-hidden"
       >
-        <div className="bg-tertiary relative flex min-h-[440px] w-full flex-col overflow-hidden rounded-[21px] p-8">
+        <div className="relative flex min-h-[440px] w-full flex-col overflow-hidden p-8">
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full opacity-25 blur-3xl transition-all duration-500 group-hover:opacity-60 group-hover:scale-110"
+            className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full opacity-15 blur-3xl transition-all duration-500 group-hover:opacity-30"
             style={{
-              background: `radial-gradient(circle, ${service.accentFrom} 0%, ${service.accentTo} 60%, transparent 100%)`,
-            }}
-          />
-
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -left-20 -bottom-20 h-44 w-44 rounded-full opacity-10 blur-3xl"
-            style={{
-              background: `linear-gradient(135deg, ${service.accentTo}, ${service.accentFrom})`,
+              background: `radial-gradient(circle, ${service.accentFrom} 0%, transparent 70%)`,
             }}
           />
 
@@ -121,12 +103,7 @@ const ServiceCard: React.FC<{ index: number; service: TService }> = ({
                 boxShadow: `0 0 30px -8px ${service.accentFrom}55`,
               }}
             >
-              <ServiceIcon
-                type={service.iconType}
-                gradientId={gradientId}
-                from={service.accentFrom}
-                to={service.accentTo}
-              />
+              <ServiceIcon type={service.iconType} color={service.accentFrom} />
             </div>
 
             <span
@@ -143,12 +120,7 @@ const ServiceCard: React.FC<{ index: number; service: TService }> = ({
           <div className="relative z-10 mt-8">
             <h3
               className="text-[26px] font-bold leading-tight"
-              style={{
-                background: `linear-gradient(90deg, ${service.accentFrom}, ${service.accentTo})`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+              style={{ color: service.accentFrom }}
             >
               {service.title}
             </h3>
@@ -171,8 +143,7 @@ const ServiceCard: React.FC<{ index: number; service: TService }> = ({
                   aria-hidden
                   className="mt-[6px] inline-block h-2 w-2 flex-shrink-0 rounded-full"
                   style={{
-                    background: `linear-gradient(135deg, ${service.accentFrom}, ${service.accentTo})`,
-                    boxShadow: `0 0 8px ${service.accentFrom}80`,
+                    background: service.accentFrom,
                   }}
                 />
                 <span>{item}</span>
@@ -185,10 +156,8 @@ const ServiceCard: React.FC<{ index: number; service: TService }> = ({
             className="relative z-10 mt-auto pt-6"
           >
             <div
-              className="h-[2px] w-full rounded-full opacity-50"
-              style={{
-                background: `linear-gradient(90deg, transparent, ${service.accentFrom}, ${service.accentTo}, transparent)`,
-              }}
+              className="h-px w-full rounded-full opacity-40"
+              style={{ background: service.accentFrom }}
             />
           </div>
         </div>

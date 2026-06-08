@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { styles } from "../../constants/styles";
 import { ComputersCanvas } from "../canvas";
 import { config } from "../../constants/config";
+import { BrandText } from "../atoms/BrandText";
 
 const Hero = () => {
   return (
@@ -11,13 +12,14 @@ const Hero = () => {
         className={`absolute inset-0 top-[120px] mx-auto max-w-7xl ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className="mt-5 flex flex-col items-center justify-center">
-          <div className="h-5 w-5 rounded-full bg-[#915EFF]" />
-          <div className="violet-gradient h-40 w-1 sm:h-80" />
+          <div className="h-5 w-5 rounded-full bg-accent" />
+          <div className="accent-line h-40 w-1 sm:h-80" />
         </div>
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">{config.hero.name}</span>
+            <span className="font-sans">Hi, I&apos;m</span>{" "}
+            <BrandText text={config.hero.name} size="hero" />
           </h1>
           <p className={`${styles.heroSubText} text-white-100 mt-2`}>
             {config.hero.p[0]} <br className="hidden sm:block" />

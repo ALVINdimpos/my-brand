@@ -57,8 +57,8 @@ const services: TService[] = [
       "System development (ERPs, internal tools, APIs)",
     ],
     iconType: "code",
-    accentFrom: "#00cea8",
-    accentTo: "#2f80ed",
+    accentFrom: "#6b8f71",
+    accentTo: "#5a7560",
   },
   {
     title: "Mentorship",
@@ -72,8 +72,8 @@ const services: TService[] = [
       "Career guidance, portfolio & interview prep",
     ],
     iconType: "mentor",
-    accentFrom: "#f5af19",
-    accentTo: "#f12711",
+    accentFrom: "#c4a35a",
+    accentTo: "#a88642",
   },
   {
     title: "Trading Bots",
@@ -87,8 +87,8 @@ const services: TService[] = [
       "Setup, optimization & lifetime updates",
     ],
     iconType: "bot",
-    accentFrom: "#bf61ff",
-    accentTo: "#ec008c",
+    accentFrom: "#b87d5c",
+    accentTo: "#9a6a4f",
   },
 ];
 

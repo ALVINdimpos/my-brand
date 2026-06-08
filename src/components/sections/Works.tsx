@@ -75,14 +75,14 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
         tiltEnable
         tiltMaxAngleX={12}
         tiltMaxAngleY={12}
-        glareColor="#aaa6c3"
+        glareColor="#9a9488"
         glareMaxOpacity={0.15}
         scale={1.02}
         transitionSpeed={1500}
         className="flex w-full"
       >
-        <div className="green-pink-gradient shadow-card group/card relative flex w-full overflow-hidden rounded-[22px] p-[1.5px]">
-          <div className="bg-tertiary relative flex w-full flex-col overflow-hidden rounded-[21px]">
+        <div className="card-shell group/card relative flex w-full overflow-hidden">
+          <div className="relative flex w-full flex-col overflow-hidden">
             <div className="relative h-[230px] w-full overflow-hidden">
               <img
                 src={image}
@@ -97,7 +97,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
                 className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover/card:opacity-100"
                 style={{
                   background:
-                    "radial-gradient(circle at top right, rgba(191,97,255,0.25) 0%, transparent 60%)",
+                    "radial-gradient(circle at top right, rgba(196,163,90,0.12) 0%, transparent 60%)",
                 }}
               />
 
@@ -115,7 +115,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
                     type="button"
                     onClick={() => window.open(liveSiteLink, "_blank")}
                     aria-label={`Open ${name} live site`}
-                    className="green-pink-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-white shadow-lg shadow-black/40 transition-transform hover:scale-110"
+                    className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-accent text-primary shadow-lg shadow-black/40 transition-transform hover:scale-110"
                   >
                     <ExternalLinkIcon />
                   </button>
@@ -132,12 +132,12 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
               </div>
 
               <div className="absolute bottom-0 left-0 right-0 h-[2px] w-full">
-                <div className="green-pink-gradient h-full w-full opacity-80" />
+                <div className="h-full w-full bg-accent/50" />
               </div>
             </div>
 
             <div className="flex flex-1 flex-col p-6">
-              <h3 className="text-[22px] font-bold leading-tight text-white transition-colors duration-300 group-hover/card:text-[#00cea8]">
+              <h3 className="text-[22px] font-bold leading-tight text-white transition-colors duration-300 group-hover/card:text-accent">
                 {name}
               </h3>
 
@@ -161,14 +161,7 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
                     href={liveSiteLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="group/cta inline-flex items-center gap-2 text-[13px] font-semibold"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #00cea8 0%, #bf61ff 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
+                    className="group/cta inline-flex items-center gap-2 text-[13px] font-semibold text-accent transition-colors hover:text-accent-hover"
                   >
                     <span>Visit site</span>
                     <ArrowRightIcon />

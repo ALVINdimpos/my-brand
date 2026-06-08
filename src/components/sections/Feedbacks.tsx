@@ -35,9 +35,9 @@ const StarsRow = () => (
 );
 
 const cardAccents = [
-  { from: "#00cea8", to: "#2f80ed" },
-  { from: "#f5af19", to: "#bf61ff" },
-  { from: "#bf61ff", to: "#ec008c" },
+  { from: "#6b8f71", to: "#5a7560" },
+  { from: "#c4a35a", to: "#a88642" },
+  { from: "#b87d5c", to: "#9a6a4f" },
 ] as const;
 
 const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
@@ -62,19 +62,19 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
         tiltEnable
         tiltMaxAngleX={10}
         tiltMaxAngleY={10}
-        glareColor="#aaa6c3"
+        glareColor="#9a9488"
         glareMaxOpacity={0.12}
         scale={1.02}
         transitionSpeed={1500}
         style={{ display: "flex", width: "100%" }}
       >
-        <div className="green-pink-gradient shadow-card group/card relative flex w-full overflow-hidden rounded-[22px] p-[1.5px]">
-          <figure className="bg-tertiary relative flex w-full flex-col overflow-hidden rounded-[21px] p-8">
+        <div className="card-shell group/card relative flex w-full overflow-hidden">
+          <figure className="relative flex w-full flex-col overflow-hidden p-8">
             <div
               aria-hidden
               className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-20 blur-3xl transition-opacity duration-500 group-hover/card:opacity-45"
               style={{
-                background: `radial-gradient(circle, ${accent.from} 0%, ${accent.to} 55%, transparent 70%)`,
+                background: `radial-gradient(circle, ${accent.from} 0%, transparent 70%)`,
               }}
             />
 
@@ -84,29 +84,22 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
               <div
                 aria-hidden
                 className="select-none font-serif text-[76px] font-black leading-none text-white/[0.06]"
-                style={{
-                  background: `linear-gradient(135deg, ${accent.from}45, ${accent.to}33)`,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
+                style={{ color: `${accent.from}22` }}
               >
                 “
               </div>
             </div>
 
             <blockquote className="relative z-10 mt-2 flex-1">
-              <p className="text-secondary text-[16px] font-light leading-[28px] tracking-wide text-[#dfd9ff]">
+              <p className="text-secondary text-[16px] font-light leading-[28px] tracking-wide">
                 <span className="font-medium text-white/95">{testimonial}</span>
               </p>
             </blockquote>
 
             <div
               aria-hidden
-              className="relative z-10 my-8 h-[2px] w-full rounded-full opacity-60"
-              style={{
-                background: `linear-gradient(90deg, transparent, ${accent.from}, ${accent.to}, transparent)`,
-              }}
+              className="relative z-10 my-8 h-px w-full rounded-full opacity-40"
+              style={{ background: accent.from }}
             />
 
             <figcaption className="relative z-10 flex items-center gap-4">
@@ -119,9 +112,7 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
               ) : (
                 <div
                   className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl text-lg font-bold text-white shadow-inner ring-2 ring-white/10"
-                  style={{
-                    background: `linear-gradient(135deg, ${accent.from}, ${accent.to})`,
-                  }}
+                  style={{ background: accent.from }}
                   aria-hidden
                 >
                   {initials}
@@ -132,12 +123,7 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
                 <cite className="not-italic">
                   <p
                     className="truncate text-[17px] font-semibold tracking-tight"
-                    style={{
-                      background: `linear-gradient(90deg, ${accent.from}, ${accent.to})`,
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
+                    style={{ color: accent.from }}
                   >
                     {name}
                   </p>

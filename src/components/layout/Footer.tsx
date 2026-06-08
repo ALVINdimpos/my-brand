@@ -1,5 +1,6 @@
 import { navLinks } from "../../constants";
 import { config } from "../../constants/config";
+import { BrandText } from "../atoms/BrandText";
 
 const socials = [
   {
@@ -50,16 +51,8 @@ const Footer = () => {
 
           {/* Brand */}
           <div>
-            <p
-              className="text-lg font-black tracking-tight text-white"
-              style={{
-                background: "linear-gradient(90deg, #804dee 0%, #bf61ff 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              {config.html.fullName}
+            <p>
+              <BrandText text={config.html.fullName} size="footer" />
             </p>
             <p className="mt-0.5 text-[12px] text-white/40">
               Full Stack Developer · Kigali, Rwanda

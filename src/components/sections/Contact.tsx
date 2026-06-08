@@ -20,7 +20,7 @@ const socials = [
   {
     label: "WhatsApp",
     href: "https://wa.me/250785767647",
-    accent: "linear-gradient(90deg, #25d366 0%, #00cea8 100%)",
+    accent: "#25a366",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
         <path d="M20.52 3.48A11.83 11.83 0 0012.08 0C5.56 0 .23 5.33.23 11.85c0 2.09.55 4.13 1.59 5.92L0 24l6.41-1.68a11.82 11.82 0 005.67 1.45h.01c6.52 0 11.85-5.33 11.85-11.85 0-3.17-1.23-6.15-3.42-8.44zM12.09 21.7h-.01a9.8 9.8 0 01-5-1.37l-.36-.22-3.8 1 1.01-3.7-.24-.38a9.78 9.78 0 01-1.5-5.17c0-5.43 4.42-9.85 9.86-9.85 2.63 0 5.11 1.02 6.96 2.88a9.79 9.79 0 012.88 6.97c0 5.43-4.42 9.84-9.85 9.84zm5.4-7.37c-.3-.15-1.78-.88-2.05-.98-.28-.1-.48-.15-.69.15-.2.3-.78.98-.95 1.18-.18.2-.35.23-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.69-1.66-.95-2.27-.25-.59-.5-.5-.69-.51h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.89 1.23 3.1c.15.2 2.12 3.24 5.14 4.54.72.31 1.29.5 1.73.64.73.23 1.39.2 1.91.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.31.18-1.43-.08-.13-.28-.2-.58-.35z" />
@@ -163,7 +163,7 @@ const Contact = () => {
                   className={`group flex items-center gap-2.5 rounded-full border px-4 py-2 text-sm font-medium transition duration-300 ${
                     isWhatsapp
                       ? "border-transparent text-white shadow-lg shadow-black/20"
-                      : "border-white/10 bg-white/[0.03] text-white/75 hover:border-[#bf61ff]/30 hover:bg-white/[0.06] hover:text-white"
+                      : "border-white/10 bg-white/[0.03] text-white/75 hover:border-accent/30 hover:bg-white/[0.06] hover:text-white"
                   }`}
                   style={
                     isWhatsapp
@@ -202,11 +202,11 @@ const Contact = () => {
             <motion.div
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-5 flex items-start gap-3 rounded-xl border border-[#00cea8]/30 bg-[#00cea8]/10 px-4 py-3"
+              className="mb-5 flex items-start gap-3 rounded-xl border border-sage/30 bg-sage-soft px-4 py-3"
               role="status"
               aria-live="polite"
             >
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#00cea8] text-xs font-bold text-black">
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sage text-xs font-bold text-primary">
                 ✓
               </span>
               <div>
@@ -239,7 +239,7 @@ const Contact = () => {
             <label className="flex flex-col gap-2">
               <span className="text-[12px] font-semibold uppercase tracking-widest text-white/50">
                 {config.contact.form.name.span}
-                <span className="ml-1 text-[#00cea8]">*</span>
+                <span className="ml-1 text-accent">*</span>
               </span>
               <input
                 type="text"
@@ -248,7 +248,7 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder={config.contact.form.name.placeholder}
                 required
-                className="bg-tertiary placeholder:text-secondary rounded-lg border border-white/5 px-4 py-3 text-sm font-medium text-white outline-none focus:border-[#00cea8]/40 focus:ring-1 focus:ring-[#00cea8]/30"
+                className="bg-tertiary placeholder:text-secondary rounded-lg border border-white/5 px-4 py-3 text-sm font-medium text-white outline-none focus:border-accent/40 focus:ring-1 focus:ring-accent/20"
               />
             </label>
 
@@ -256,7 +256,7 @@ const Contact = () => {
             <label className="flex flex-col gap-2">
               <span className="text-[12px] font-semibold uppercase tracking-widest text-white/50">
                 {config.contact.form.email.span}
-                <span className="ml-1 text-[#00cea8]">*</span>
+                <span className="ml-1 text-accent">*</span>
               </span>
               <input
                 type="email"
@@ -265,7 +265,7 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder={config.contact.form.email.placeholder}
                 required
-                className="bg-tertiary placeholder:text-secondary rounded-lg border border-white/5 px-4 py-3 text-sm font-medium text-white outline-none focus:border-[#00cea8]/40 focus:ring-1 focus:ring-[#00cea8]/30"
+                className="bg-tertiary placeholder:text-secondary rounded-lg border border-white/5 px-4 py-3 text-sm font-medium text-white outline-none focus:border-accent/40 focus:ring-1 focus:ring-accent/20"
               />
             </label>
 
@@ -273,7 +273,7 @@ const Contact = () => {
             <label className="col-span-1 flex flex-col gap-2 sm:col-span-2">
               <span className="text-[12px] font-semibold uppercase tracking-widest text-white/50">
                 {config.contact.form.message.span}
-                <span className="ml-1 text-[#00cea8]">*</span>
+                <span className="ml-1 text-accent">*</span>
               </span>
               <textarea
                 name="message"
@@ -282,7 +282,7 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder={config.contact.form.message.placeholder}
                 required
-                className="bg-tertiary placeholder:text-secondary resize-none rounded-lg border border-white/5 px-4 py-3 text-sm font-medium text-white outline-none focus:border-[#00cea8]/40 focus:ring-1 focus:ring-[#00cea8]/30"
+                className="bg-tertiary placeholder:text-secondary resize-none rounded-lg border border-white/5 px-4 py-3 text-sm font-medium text-white outline-none focus:border-accent/40 focus:ring-1 focus:ring-accent/20"
               />
             </label>
 
@@ -290,8 +290,7 @@ const Contact = () => {
             <div className="col-span-1 sm:col-span-2">
               <button
                 type="submit"
-                className="w-full rounded-xl py-3 text-sm font-bold text-white shadow-md shadow-black/40 outline-none transition hover:brightness-110"
-                style={{ background: "linear-gradient(90deg, #804dee 0%, #bf61ff 100%)" }}
+                className="btn-primary w-full rounded-xl py-3 text-sm font-bold shadow-md shadow-black/30"
               >
                 {loading ? "Sending…" : "Send message →"}
               </button>

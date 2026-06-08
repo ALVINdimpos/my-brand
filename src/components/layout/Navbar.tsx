@@ -5,6 +5,7 @@ import { styles } from "../../constants/styles";
 import { navLinks } from "../../constants";
 import { logo, menu, close } from "../../assets";
 import { config } from "../../constants/config";
+import { BrandText } from "../atoms/BrandText";
 
 const Navbar = () => {
   const [active, setActive] = useState<string | null>();
@@ -65,8 +66,8 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className="h-9 w-9 object-contain" />
-          <p className="flex cursor-pointer text-[18px] font-bold text-white ">
-            {config.html.title}
+          <p className="flex cursor-pointer">
+            <BrandText text={config.html.title} size="nav" />
           </p>
         </Link>
 
@@ -85,8 +86,7 @@ const Navbar = () => {
             <a
               href="/Alvin_Fiston_Niyigena.pdf"
               download="Alvin_Fiston_Niyigena_CV.pdf"
-              className="rounded-lg px-4 py-2 text-[15px] font-semibold text-white transition hover:brightness-110"
-              style={{ background: "linear-gradient(90deg, #804dee 0%, #bf61ff 100%)" }}
+              className="btn-primary"
             >
               Download CV
             </a>
@@ -122,8 +122,7 @@ const Navbar = () => {
                 <a
                   href="/Alvin_Fiston_Niyigena.pdf"
                   download="Alvin_Fiston_Niyigena_CV.pdf"
-                  className="rounded-lg px-4 py-2 text-[15px] font-semibold text-white transition hover:brightness-110"
-                  style={{ background: "linear-gradient(90deg, #804dee 0%, #bf61ff 100%)" }}
+                  className="btn-primary"
                   onClick={() => setToggle(false)}
                 >
                   Download CV
